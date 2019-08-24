@@ -1,0 +1,273 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{048D905B-7A60-4620-8EF5-4137BD6528BB}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>AdminSoftNext</RootNamespace>
+    <AssemblyName>AdminSoftNext</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="MaterialDesignColors, Version=1.2.0.325, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MaterialDesignColors.1.2.0\lib\net45\MaterialDesignColors.dll</HintPath>
+    </Reference>
+    <Reference Include="MaterialDesignThemes.Wpf, Version=2.6.0.325, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MaterialDesignThemes.2.6.0\lib\net45\MaterialDesignThemes.Wpf.dll</HintPath>
+    </Reference>
+    <Reference Include="MaterialSkin, Version=2.0.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\PersianMaterialSkin.2.0.3\lib\net45\MaterialSkin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="Microsoft.VisualBasic.PowerPacks, Version=12.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="MySql.Data, Version=8.0.16.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL" />
+    <Reference Include="MySql.Data.EntityFramework, Version=8.0.16.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL" />
+    <Reference Include="MySQL.Data.EntityFrameworkCore, Version=8.0.16.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL" />
+    <Reference Include="MySQL.Data.EntityFrameworkCore.Design, Version=8.0.16.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL" />
+    <Reference Include="MySql.Web, Version=8.0.16.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Beans\ColonoBeans.cs" />
+    <Compile Include="Controlador\CallesController.cs" />
+    <Compile Include="Controlador\ColonoController.cs" />
+    <Compile Include="Controlador\PropietarioController.cs" />
+    <Compile Include="Controlador\ProveedorController.cs" />
+    <Compile Include="Controlador\ProveeduriaController.cs" />
+    <Compile Include="Controlador\TagController.cs" />
+    <Compile Include="DbConfiguracion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DbConfiguracion.Designer.cs">
+      <DependentUpon>DbConfiguracion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modelo\Calles.cs" />
+    <Compile Include="Modelo\Colono.cs" />
+    <Compile Include="Modelo\Propietario.cs" />
+    <Compile Include="Modelo\Proveedor.cs" />
+    <Compile Include="Modelo\Proveeduria.cs" />
+    <Compile Include="Modelo\Tags.cs" />
+    <Compile Include="Modelo\Usuarios.cs" />
+    <Compile Include="Principal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Principal.Designer.cs">
+      <DependentUpon>Principal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Login.Designer.cs">
+      <DependentUpon>Login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="mysql\modelo.cs" />
+    <Compile Include="panelControl.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="panelControl.Designer.cs">
+      <DependentUpon>panelControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Vista\CatalogoTiposProveeduria.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\CatalogoTiposProveeduria.Designer.cs">
+      <DependentUpon>CatalogoTiposProveeduria.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\FormularioCalles.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\FormularioCalles.Designer.cs">
+      <DependentUpon>FormularioCalles.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\FormularioColonos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\FormularioColonos.Designer.cs">
+      <DependentUpon>FormularioColonos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\FormularioProveedor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\FormularioProveedor.Designer.cs">
+      <DependentUpon>FormularioProveedor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\FormularioTags.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\FormularioTags.Designer.cs">
+      <DependentUpon>FormularioTags.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\ModuloColonos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\ModuloColonos.Designer.cs">
+      <DependentUpon>ModuloColonos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\ModuloPagos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\ModuloPagos.Designer.cs">
+      <DependentUpon>ModuloPagos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\ModuloPropietario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\ModuloPropietario.Designer.cs">
+      <DependentUpon>ModuloPropietario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\ModuloProveedor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\ModuloProveedor.Designer.cs">
+      <DependentUpon>ModuloProveedor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\ModuloTags.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\ModuloTags.Designer.cs">
+      <DependentUpon>ModuloTags.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="DbConfiguracion.resx">
+      <DependentUpon>DbConfiguracion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Principal.resx">
+      <DependentUpon>Principal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Login.resx">
+      <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="panelControl.resx">
+      <DependentUpon>panelControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Vista\CatalogoTiposProveeduria.resx">
+      <DependentUpon>CatalogoTiposProveeduria.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\FormularioCalles.resx">
+      <DependentUpon>FormularioCalles.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\FormularioColonos.resx">
+      <DependentUpon>FormularioColonos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\FormularioProveedor.resx">
+      <DependentUpon>FormularioProveedor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\FormularioTags.resx">
+      <DependentUpon>FormularioTags.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\ModuloColonos.resx">
+      <DependentUpon>ModuloColonos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\ModuloPagos.resx">
+      <DependentUpon>ModuloPagos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\ModuloPropietario.resx">
+      <DependentUpon>ModuloPropietario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\ModuloProveedor.resx">
+      <DependentUpon>ModuloProveedor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\ModuloTags.resx">
+      <DependentUpon>ModuloTags.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="Microsoft.Office.Core">
+      <Guid>{2DF8D04C-5BFA-101B-BDE5-00AA0044DE52}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>8</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="stdole">
+      <Guid>{00020430-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="VBIDE">
+      <Guid>{0002E157-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>5</VersionMajor>
+      <VersionMinor>3</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Imagenes\ancient.png" />
+    <Content Include="Imagenes\check-mark.png" />
+    <Content Include="Imagenes\school-material.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

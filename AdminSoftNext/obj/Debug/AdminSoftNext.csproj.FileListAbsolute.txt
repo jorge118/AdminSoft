@@ -1,0 +1,73 @@
+c:\users\user\documents\visual studio 2015\Projects\AdminSoftNext\AdminSoftNext\bin\Debug\AdminSoftNext.exe.config
+C:\Users\user\documents\visual studio 2015\Projects\AdminSoftNext\AdminSoftNext\bin\Debug\AdminSoftNext.exe
+C:\Users\user\documents\visual studio 2015\Projects\AdminSoftNext\AdminSoftNext\bin\Debug\AdminSoftNext.pdb
+C:\Users\user\documents\visual studio 2015\Projects\AdminSoftNext\AdminSoftNext\obj\Debug\AdminSoftNext.csprojResolveAssemblyReference.cache
+C:\Users\user\documents\visual studio 2015\Projects\AdminSoftNext\AdminSoftNext\obj\Debug\AdminSoftNext.Properties.Resources.resources
+C:\Users\user\documents\visual studio 2015\Projects\AdminSoftNext\AdminSoftNext\obj\Debug\AdminSoftNext.csproj.GenerateResource.Cache
+C:\Users\user\documents\visual studio 2015\Projects\AdminSoftNext\AdminSoftNext\obj\Debug\AdminSoftNext.exe
+C:\Users\user\documents\visual studio 2015\Projects\AdminSoftNext\AdminSoftNext\obj\Debug\AdminSoftNext.pdb
+C:\Users\user\documents\visual studio 2015\Projects\AdminSoftNext\AdminSoftNext\obj\Debug\AdminSoftNext.FrmPrincipal.resources
+C:\Users\user\Documents\Visual Studio 2015\Projects\AdminSoftNext\AdminSoftNext\obj\Debug\AdminSoftNext.FrmLogin.resources
+C:\Users\user\Documents\Visual Studio 2015\Projects\AdminSoftNext\AdminSoftNext\bin\Debug\Microsoft.VisualBasic.PowerPacks.dll
+C:\Users\user\Documents\Visual Studio 2015\Projects\AdminSoftNext\AdminSoftNext\bin\Debug\Microsoft.VisualBasic.PowerPacks.xml
+C:\Users\user\documents\visual studio 2015\Projects\AdminSoftNext\AdminSoftNext\bin\Debug\MySql.Data.dll
+C:\Users\user\documents\visual studio 2015\Projects\AdminSoftNext\AdminSoftNext\bin\Debug\MySql.Data.EntityFramework.dll
+C:\Users\user\documents\visual studio 2015\Projects\AdminSoftNext\AdminSoftNext\bin\Debug\MySQL.Data.EntityFrameworkCore.Design.dll
+C:\Users\user\documents\visual studio 2015\Projects\AdminSoftNext\AdminSoftNext\bin\Debug\MySQL.Data.EntityFrameworkCore.dll
+C:\Users\user\documents\visual studio 2015\Projects\AdminSoftNext\AdminSoftNext\bin\Debug\MySql.Web.dll
+C:\Users\user\documents\visual studio 2015\Projects\AdminSoftNext\AdminSoftNext\bin\Debug\Google.Protobuf.dll
+C:\Users\user\documents\visual studio 2015\Projects\AdminSoftNext\AdminSoftNext\bin\Debug\BouncyCastle.Crypto.dll
+C:\Users\user\documents\visual studio 2015\Projects\AdminSoftNext\AdminSoftNext\bin\Debug\MySql.Data.xml
+C:\Users\user\documents\visual studio 2015\Projects\AdminSoftNext\AdminSoftNext\bin\Debug\MySql.Data.EntityFramework.xml
+C:\Users\user\documents\visual studio 2015\Projects\AdminSoftNext\AdminSoftNext\bin\Debug\MySQL.Data.EntityFrameworkCore.xml
+C:\Users\user\documents\visual studio 2015\Projects\AdminSoftNext\AdminSoftNext\bin\Debug\MySQL.Data.EntityFrameworkCore.Design.xml
+C:\Users\user\documents\visual studio 2015\Projects\AdminSoftNext\AdminSoftNext\bin\Debug\MySql.Web.xml
+C:\Users\user\documents\visual studio 2015\Projects\AdminSoftNext\AdminSoftNext\obj\Debug\AdminSoftNext.csproj.AdminSoftNext.exe.config
+C:\Users\user\Documents\Visual Studio 2015\Projects\AdminSoftNext\AdminSoftNext\obj\Debug\AdminSoftNext.panelControl.resources
+C:\Users\user\Documents\Visual Studio 2015\Projects\AdminSoftNext\AdminSoftNext\obj\Debug\AdminSoftNext.csproj.ResolveComReference.cache
+C:\Users\user\Documents\Visual Studio 2015\Projects\AdminSoftNext\AdminSoftNext\obj\Debug\AdminSoftNext.DbConfiguracion.resources
+C:\Users\Jorge\Documents\Soft\AdminSoftNext\AdminSoftNext\bin\Debug\AdminSoftNext.exe.config
+C:\Users\Jorge\Documents\Soft\AdminSoftNext\AdminSoftNext\bin\Debug\AdminSoftNext.exe
+C:\Users\Jorge\Documents\Soft\AdminSoftNext\AdminSoftNext\bin\Debug\AdminSoftNext.pdb
+C:\Users\Jorge\Documents\Soft\AdminSoftNext\AdminSoftNext\bin\Debug\MySql.Data.dll
+C:\Users\Jorge\Documents\Soft\AdminSoftNext\AdminSoftNext\bin\Debug\MySql.Data.EntityFramework.dll
+C:\Users\Jorge\Documents\Soft\AdminSoftNext\AdminSoftNext\bin\Debug\MySQL.Data.EntityFrameworkCore.Design.dll
+C:\Users\Jorge\Documents\Soft\AdminSoftNext\AdminSoftNext\bin\Debug\MySQL.Data.EntityFrameworkCore.dll
+C:\Users\Jorge\Documents\Soft\AdminSoftNext\AdminSoftNext\bin\Debug\MySql.Web.dll
+C:\Users\Jorge\Documents\Soft\AdminSoftNext\AdminSoftNext\bin\Debug\Google.Protobuf.dll
+C:\Users\Jorge\Documents\Soft\AdminSoftNext\AdminSoftNext\bin\Debug\BouncyCastle.Crypto.dll
+C:\Users\Jorge\Documents\Soft\AdminSoftNext\AdminSoftNext\bin\Debug\Microsoft.VisualBasic.PowerPacks.xml
+C:\Users\Jorge\Documents\Soft\AdminSoftNext\AdminSoftNext\bin\Debug\MySql.Data.xml
+C:\Users\Jorge\Documents\Soft\AdminSoftNext\AdminSoftNext\bin\Debug\MySql.Data.EntityFramework.xml
+C:\Users\Jorge\Documents\Soft\AdminSoftNext\AdminSoftNext\bin\Debug\MySQL.Data.EntityFrameworkCore.xml
+C:\Users\Jorge\Documents\Soft\AdminSoftNext\AdminSoftNext\bin\Debug\MySQL.Data.EntityFrameworkCore.Design.xml
+C:\Users\Jorge\Documents\Soft\AdminSoftNext\AdminSoftNext\bin\Debug\MySql.Web.xml
+C:\Users\Jorge\Documents\Soft\AdminSoftNext\AdminSoftNext\obj\Debug\AdminSoftNext.csprojAssemblyReference.cache
+C:\Users\Jorge\Documents\Soft\AdminSoftNext\AdminSoftNext\obj\Debug\AdminSoftNext.exe.config
+C:\Users\Jorge\Documents\Soft\AdminSoftNext\AdminSoftNext\obj\Debug\AdminSoftNext.csproj.ResolveComReference.cache
+C:\Users\Jorge\Documents\Soft\AdminSoftNext\AdminSoftNext\obj\Debug\AdminSoftNext.DbConfiguracion.resources
+C:\Users\Jorge\Documents\Soft\AdminSoftNext\AdminSoftNext\obj\Debug\AdminSoftNext.FrmPrincipal.resources
+C:\Users\Jorge\Documents\Soft\AdminSoftNext\AdminSoftNext\obj\Debug\AdminSoftNext.FrmLogin.resources
+C:\Users\Jorge\Documents\Soft\AdminSoftNext\AdminSoftNext\obj\Debug\AdminSoftNext.panelControl.resources
+C:\Users\Jorge\Documents\Soft\AdminSoftNext\AdminSoftNext\obj\Debug\AdminSoftNext.Properties.Resources.resources
+C:\Users\Jorge\Documents\Soft\AdminSoftNext\AdminSoftNext\obj\Debug\AdminSoftNext.csproj.GenerateResource.cache
+C:\Users\Jorge\Documents\Soft\AdminSoftNext\AdminSoftNext\obj\Debug\AdminSoftNext.csproj.CoreCompileInputs.cache
+C:\Users\Jorge\Documents\Soft\AdminSoftNext\AdminSoftNext\obj\Debug\AdminSoftNext.csproj.CopyComplete
+C:\Users\Jorge\Documents\Soft\AdminSoftNext\AdminSoftNext\obj\Debug\AdminSoftNext.exe
+C:\Users\Jorge\Documents\Soft\AdminSoftNext\AdminSoftNext\obj\Debug\AdminSoftNext.pdb
+C:\Users\Jorge\Documents\Soft\AdminSoftNext\AdminSoftNext\obj\Debug\AdminSoftNext.Vista.ModuloColonos.resources
+C:\Users\Jorge\Documents\Soft\AdminSoftNext\AdminSoftNext\obj\Debug\AdminSoftNext.Vista.FormularioColonos.resources
+C:\Users\Jorge\Documents\Soft\AdminSoftNext\AdminSoftNext\obj\Debug\AdminSoftNext.Vista.FormularioCalles.resources
+C:\Users\Jorge\Documents\Soft\AdminSoftNext\AdminSoftNext\obj\Debug\AdminSoftNext.Vista.ModuloPropietario.resources
+C:\Users\Jorge\Documents\Soft\AdminSoftNext\AdminSoftNext\obj\Debug\AdminSoftNext.Vista.FormularioTags.resources
+C:\Users\Jorge\Documents\Soft\AdminSoftNext\AdminSoftNext\obj\Debug\AdminSoftNext.Vista.ModuloTags.resources
+C:\Users\Jorge\Documents\Soft\AdminSoftNext\AdminSoftNext\obj\Debug\AdminSoftNext.Vista.CatalogoTiposProveeduria.resources
+C:\Users\Jorge\Documents\Soft\AdminSoftNext\AdminSoftNext\obj\Debug\AdminSoftNext.Vista.FormularioProveedor.resources
+C:\Users\Jorge\Documents\Soft\AdminSoftNext\AdminSoftNext\obj\Debug\AdminSoftNext.Vista.ModuloProveedor.resources
+C:\Users\Jorge\Documents\Soft\AdminSoftNext\AdminSoftNext\obj\Debug\AdminSoftNext.Vista.ModuloPagos.resources
+C:\Users\Jorge\Documents\Soft\AdminSoftNext\AdminSoftNext\bin\Debug\MaterialDesignColors.dll
+C:\Users\Jorge\Documents\Soft\AdminSoftNext\AdminSoftNext\bin\Debug\MaterialDesignThemes.Wpf.dll
+C:\Users\Jorge\Documents\Soft\AdminSoftNext\AdminSoftNext\bin\Debug\MaterialSkin.dll
+C:\Users\Jorge\Documents\Soft\AdminSoftNext\AdminSoftNext\bin\Debug\MaterialDesignColors.pdb
+C:\Users\Jorge\Documents\Soft\AdminSoftNext\AdminSoftNext\bin\Debug\MaterialDesignThemes.Wpf.pdb
+C:\Users\Jorge\Documents\Soft\AdminSoftNext\AdminSoftNext\bin\Debug\MaterialDesignThemes.Wpf.xml
