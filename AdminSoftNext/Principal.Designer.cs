@@ -32,6 +32,9 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmPrincipal));
             this.PanelCabecera = new System.Windows.Forms.Panel();
             this.subPanel1 = new System.Windows.Forms.Panel();
+            this.btnSalarios = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
             this.BtnEstadisticas = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.BtnComvenios = new System.Windows.Forms.Button();
@@ -42,6 +45,7 @@
             this.BtnMaximizar = new System.Windows.Forms.Button();
             this.BtnCerrar = new System.Windows.Forms.Button();
             this.PanelMenu = new System.Windows.Forms.Panel();
+            this.button5 = new System.Windows.Forms.Button();
             this.btnProveedores = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.panel7 = new System.Windows.Forms.Panel();
@@ -61,7 +65,7 @@
             this.PanelContenedor = new System.Windows.Forms.Panel();
             this.TmOcultarMenu = new System.Windows.Forms.Timer(this.components);
             this.TmMostrarMenu = new System.Windows.Forms.Timer(this.components);
-            this.label1 = new System.Windows.Forms.Label();
+            this.btnTipoCoutas = new System.Windows.Forms.Button();
             this.PanelCabecera.SuspendLayout();
             this.subPanel1.SuspendLayout();
             this.PanelMenu.SuspendLayout();
@@ -87,6 +91,9 @@
             // subPanel1
             // 
             this.subPanel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(46)))), ((int)(((byte)(59)))));
+            this.subPanel1.Controls.Add(this.btnTipoCoutas);
+            this.subPanel1.Controls.Add(this.btnSalarios);
+            this.subPanel1.Controls.Add(this.button4);
             this.subPanel1.Controls.Add(this.label1);
             this.subPanel1.Controls.Add(this.BtnEstadisticas);
             this.subPanel1.Controls.Add(this.button3);
@@ -99,6 +106,55 @@
             this.subPanel1.Size = new System.Drawing.Size(1119, 39);
             this.subPanel1.TabIndex = 5;
             // 
+            // btnSalarios
+            // 
+            this.btnSalarios.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSalarios.FlatAppearance.BorderSize = 0;
+            this.btnSalarios.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Goldenrod;
+            this.btnSalarios.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSalarios.Font = new System.Drawing.Font("Malgun Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSalarios.ForeColor = System.Drawing.Color.White;
+            this.btnSalarios.Image = ((System.Drawing.Image)(resources.GetObject("btnSalarios.Image")));
+            this.btnSalarios.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSalarios.Location = new System.Drawing.Point(865, 3);
+            this.btnSalarios.Margin = new System.Windows.Forms.Padding(2);
+            this.btnSalarios.Name = "btnSalarios";
+            this.btnSalarios.Size = new System.Drawing.Size(99, 30);
+            this.btnSalarios.TabIndex = 21;
+            this.btnSalarios.Text = "     SALARIOS";
+            this.btnSalarios.UseVisualStyleBackColor = true;
+            this.btnSalarios.Click += new System.EventHandler(this.btnSalarios_Click);
+            // 
+            // button4
+            // 
+            this.button4.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button4.FlatAppearance.BorderSize = 0;
+            this.button4.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Goldenrod;
+            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button4.Font = new System.Drawing.Font("Malgun Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button4.ForeColor = System.Drawing.Color.White;
+            this.button4.Image = ((System.Drawing.Image)(resources.GetObject("button4.Image")));
+            this.button4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button4.Location = new System.Drawing.Point(744, 4);
+            this.button4.Margin = new System.Windows.Forms.Padding(2);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(130, 30);
+            this.button4.TabIndex = 20;
+            this.button4.Text = "        TIPOS PAGO";
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label1.Location = new System.Drawing.Point(1047, 13);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(70, 13);
+            this.label1.TabIndex = 19;
+            this.label1.Text = "Cerrar Sesion";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
+            // 
             // BtnEstadisticas
             // 
             this.BtnEstadisticas.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -109,12 +165,12 @@
             this.BtnEstadisticas.ForeColor = System.Drawing.Color.White;
             this.BtnEstadisticas.Image = ((System.Drawing.Image)(resources.GetObject("BtnEstadisticas.Image")));
             this.BtnEstadisticas.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BtnEstadisticas.Location = new System.Drawing.Point(674, 4);
+            this.BtnEstadisticas.Location = new System.Drawing.Point(614, 5);
             this.BtnEstadisticas.Margin = new System.Windows.Forms.Padding(2);
             this.BtnEstadisticas.Name = "BtnEstadisticas";
-            this.BtnEstadisticas.Size = new System.Drawing.Size(130, 30);
+            this.BtnEstadisticas.Size = new System.Drawing.Size(126, 30);
             this.BtnEstadisticas.TabIndex = 7;
-            this.BtnEstadisticas.Text = "        ESTADISTICAS";
+            this.BtnEstadisticas.Text = "       ESTADISTICAS";
             this.BtnEstadisticas.UseVisualStyleBackColor = true;
             this.BtnEstadisticas.Click += new System.EventHandler(this.BtnReportes_Click);
             // 
@@ -128,10 +184,10 @@
             this.button3.ForeColor = System.Drawing.Color.White;
             this.button3.Image = ((System.Drawing.Image)(resources.GetObject("button3.Image")));
             this.button3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button3.Location = new System.Drawing.Point(404, 5);
+            this.button3.Location = new System.Drawing.Point(385, 5);
             this.button3.Margin = new System.Windows.Forms.Padding(2);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(136, 30);
+            this.button3.Size = new System.Drawing.Size(123, 30);
             this.button3.TabIndex = 18;
             this.button3.Text = "      PROVEEDURIA";
             this.button3.UseVisualStyleBackColor = true;
@@ -147,13 +203,14 @@
             this.BtnComvenios.ForeColor = System.Drawing.Color.White;
             this.BtnComvenios.Image = ((System.Drawing.Image)(resources.GetObject("BtnComvenios.Image")));
             this.BtnComvenios.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BtnComvenios.Location = new System.Drawing.Point(544, 1);
+            this.BtnComvenios.Location = new System.Drawing.Point(502, 2);
             this.BtnComvenios.Margin = new System.Windows.Forms.Padding(2);
             this.BtnComvenios.Name = "BtnComvenios";
-            this.BtnComvenios.Size = new System.Drawing.Size(135, 30);
+            this.BtnComvenios.Size = new System.Drawing.Size(108, 34);
             this.BtnComvenios.TabIndex = 5;
             this.BtnComvenios.Text = "     CONVENIOS";
             this.BtnComvenios.UseVisualStyleBackColor = true;
+            this.BtnComvenios.Click += new System.EventHandler(this.BtnComvenios_Click);
             // 
             // btnCalles
             // 
@@ -164,9 +221,9 @@
             this.btnCalles.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btnCalles.Image = ((System.Drawing.Image)(resources.GetObject("btnCalles.Image")));
             this.btnCalles.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCalles.Location = new System.Drawing.Point(149, 4);
+            this.btnCalles.Location = new System.Drawing.Point(149, 0);
             this.btnCalles.Name = "btnCalles";
-            this.btnCalles.Size = new System.Drawing.Size(130, 33);
+            this.btnCalles.Size = new System.Drawing.Size(110, 37);
             this.btnCalles.TabIndex = 0;
             this.btnCalles.Text = "CALLES";
             this.btnCalles.UseVisualStyleBackColor = false;
@@ -183,9 +240,9 @@
             this.button1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
             this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(278, 0);
+            this.button1.Location = new System.Drawing.Point(256, 0);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(130, 39);
+            this.button1.Size = new System.Drawing.Size(124, 39);
             this.button1.TabIndex = 1;
             this.button1.Text = "         PROPIETARIOS";
             this.button1.UseVisualStyleBackColor = false;
@@ -263,6 +320,7 @@
             // PanelMenu
             // 
             this.PanelMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(46)))), ((int)(((byte)(59)))));
+            this.PanelMenu.Controls.Add(this.button5);
             this.PanelMenu.Controls.Add(this.btnProveedores);
             this.PanelMenu.Controls.Add(this.button2);
             this.PanelMenu.Controls.Add(this.panel7);
@@ -285,6 +343,25 @@
             this.PanelMenu.Name = "PanelMenu";
             this.PanelMenu.Size = new System.Drawing.Size(145, 484);
             this.PanelMenu.TabIndex = 1;
+            // 
+            // button5
+            // 
+            this.button5.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button5.FlatAppearance.BorderSize = 0;
+            this.button5.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Goldenrod;
+            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button5.Font = new System.Drawing.Font("Malgun Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button5.ForeColor = System.Drawing.Color.White;
+            this.button5.Image = ((System.Drawing.Image)(resources.GetObject("button5.Image")));
+            this.button5.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button5.Location = new System.Drawing.Point(4, 400);
+            this.button5.Margin = new System.Windows.Forms.Padding(2);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(142, 30);
+            this.button5.TabIndex = 19;
+            this.button5.Text = "COUTAS";
+            this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // btnProveedores
             // 
@@ -495,6 +572,7 @@
             this.BtnLogo.Text = "NEXTGENESYS";
             this.BtnLogo.TextAlign = System.Drawing.ContentAlignment.BottomRight;
             this.BtnLogo.UseVisualStyleBackColor = true;
+            this.BtnLogo.Click += new System.EventHandler(this.BtnLogo_Click);
             // 
             // btnMenu
             // 
@@ -529,16 +607,24 @@
             this.TmMostrarMenu.Interval = 80;
             this.TmMostrarMenu.Tick += new System.EventHandler(this.TmMostrarMenu_Tick);
             // 
-            // label1
+            // btnTipoCoutas
             // 
-            this.label1.AutoSize = true;
-            this.label1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label1.Location = new System.Drawing.Point(1038, 13);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(70, 13);
-            this.label1.TabIndex = 19;
-            this.label1.Text = "Cerrar Sesion";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
+            this.btnTipoCoutas.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnTipoCoutas.FlatAppearance.BorderSize = 0;
+            this.btnTipoCoutas.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Goldenrod;
+            this.btnTipoCoutas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnTipoCoutas.Font = new System.Drawing.Font("Malgun Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTipoCoutas.ForeColor = System.Drawing.Color.White;
+            this.btnTipoCoutas.Image = ((System.Drawing.Image)(resources.GetObject("btnTipoCoutas.Image")));
+            this.btnTipoCoutas.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnTipoCoutas.Location = new System.Drawing.Point(962, 7);
+            this.btnTipoCoutas.Margin = new System.Windows.Forms.Padding(2);
+            this.btnTipoCoutas.Name = "btnTipoCoutas";
+            this.btnTipoCoutas.Size = new System.Drawing.Size(80, 30);
+            this.btnTipoCoutas.TabIndex = 22;
+            this.btnTipoCoutas.Text = " CUOTAS";
+            this.btnTipoCoutas.UseVisualStyleBackColor = true;
+            this.btnTipoCoutas.Click += new System.EventHandler(this.btnTipoCoutas_Click);
             // 
             // FrmPrincipal
             // 
@@ -597,6 +683,10 @@
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Panel subPanel1;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button btnSalarios;
+        private System.Windows.Forms.Button btnTipoCoutas;
     }
 }
 

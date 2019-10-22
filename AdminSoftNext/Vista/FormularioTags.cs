@@ -26,7 +26,7 @@ namespace AdminSoftNext.Vista
         public string tipVehiculo;
         public string placas;
         public string color;
-
+        public string obser;
         double formTag;
         public FormularioTags()
         {
@@ -35,30 +35,54 @@ namespace AdminSoftNext.Vista
 
         private void button1_Click(object sender, EventArgs e)
         {
-            this.tg.IdTag = Convert.ToInt32(idText.Text);
-            this.tg.NumTag = Convert.ToInt32(tagTxt.Text);
-            this.tg.NumSitio = Convert.ToInt32(sitioTxt.Text);
-            this.tg.TipoVehiculo = vehiTxt.Text;
-            this.tg.NumPlacas = placasTxt.Text;
-            this.tg.Color = colorTxt.Text;
-            this.tg.Colono = comboBox1.SelectedValue.ToString();
-
-           
-            
-            if (cont == 1)
+            if (tagTxt.Text == "" || colorTxt.Text == "" || placasTxt.Text == "")
             {
-                tagC.registrarTag(tg);
-                this.Close();
-            }else if(cont == 2)
-            {
-
-                tagC.modificarTag(tg);
-                this.Close();
+                MessageBox.Show("Llene los campos requeridos");
             }
             else
             {
-
+                this.tg.IdTag = Convert.ToInt32(idText.Text);
+                this.tg.NumTag = Convert.ToInt32(tagTxt.Text);
+                this.tg.NumSitio = Convert.ToInt32(sitioTxt.Text);
+                this.tg.TipoVehiculo = vehiTxt.Text;
+                this.tg.NumPlacas = placasTxt.Text;
+                this.tg.Color = colorTxt.Text;
+                this.tg.Colono = comboBox1.SelectedValue.ToString();
+                this.tg.Observaciones = textObser.Text;
             }
+
+          
+
+
+            if (cont == 1)
+            {
+
+                if (tagTxt.Text == ""||colorTxt.Text == ""|| placasTxt.Text == "")
+                {
+                    MessageBox.Show("Llene los campos requeridos");
+                }
+                else
+                {
+                    tagC.registrarTag(tg);
+                    this.Close();
+                }
+
+                
+            }
+            else if (cont == 2)
+            {
+                if (tagTxt.Text == "" || colorTxt.Text == "" || placasTxt.Text == "")
+                {
+                    MessageBox.Show("Llene los campos requeridos");
+                }
+                else
+                {
+                    tagC.modificarTag(tg);
+                    this.Close();
+                }
+               
+            }
+            
         }
 
         public void cargar()
@@ -78,13 +102,14 @@ namespace AdminSoftNext.Vista
             this.tg.NumPlacas = placasTxt.Text;
             this.tg.Color = colorTxt.Text;
             this.tg.Colono = comboBox1.SelectedValue.ToString();
+            this.tg.Observaciones = textObser.Text;
         }
 
         public void datosColono()
         {
             using (MySqlConnection conn = new MySqlConnection("server=127.0.0.1;database=nextadmindb;Uid=root;pwd=root"))
             {
-                string query = "select concat(direccion,' ',numero) as DireccionColono from Colono";
+                string query = "select concat(Direccion,' ',numero) as DireccionColono from vista_colono";
 
                 MySqlCommand cmd = new MySqlCommand(query, conn);
 
@@ -105,7 +130,7 @@ namespace AdminSoftNext.Vista
             id = rd.Next(100, 99001);
             idText.Text = id.ToString();
 
-            
+
 
             if (idText.Text == "0")
             {
@@ -113,7 +138,7 @@ namespace AdminSoftNext.Vista
                 idText.Text = id.ToString();
             }
 
-            if(cont == 2)
+            if (cont == 2)
             {
                 idText.Text = idTags.ToString();
                 tagTxt.Text = numTag.ToString();
@@ -121,6 +146,7 @@ namespace AdminSoftNext.Vista
                 vehiTxt.Text = tipVehiculo.ToString();
                 placasTxt.Text = placas.ToString();
                 colorTxt.Text = color.ToString();
+                textObser.Text = obser.ToString();
             }
 
         }
@@ -156,7 +182,7 @@ namespace AdminSoftNext.Vista
 
         private void checkBoxTag_CheckedChanged(object sender, EventArgs e)
         {
-            if(checkBoxTag.Checked == true)
+            if (checkBoxTag.Checked == true)
             {
                 txtReactivo.Enabled = false;
                 sitioTxt.Enabled = false;
@@ -174,7 +200,7 @@ namespace AdminSoftNext.Vista
 
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
         {
-            if(checkBox1.Checked == true)
+            if (checkBox1.Checked == true)
             {
                 checkBoxTag.Enabled = false;
                 tagTxt.Enabled = false;
@@ -199,6 +225,17 @@ namespace AdminSoftNext.Vista
             catch
             {
                 //MessageBox.Show("");
+            }
+        }
+
+        private void FormularioTags_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            ModuloTags frm4 = Application.OpenForms.OfType<ModuloTags>().FirstOrDefault();
+
+            if (frm4 != null)  //Si encuentra una instancia abierta
+            {
+                frm4.Refresh();
+                frm4.MostrarDatos();
             }
         }
     }

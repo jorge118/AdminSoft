@@ -34,7 +34,7 @@ namespace AdminSoftNext.Vista
             calCont.registrarColono(cal);
             this.textBox1.Text = "";
             this.textBox2.Text = "";
-            this.textBox3.Text = "";
+            
             id = rd.Next(111, 2000);
             
             textBox1.Text = id.ToString();
@@ -45,7 +45,7 @@ namespace AdminSoftNext.Vista
         {
             this.cal.Idcalles = Convert.ToInt32(textBox1.Text);
             this.cal.Nombre = textBox2.Text;
-            this.cal.Idnumero = Convert.ToInt32(textBox3.Text);
+            
         }
 
         private void FormularioCalles_Load(object sender, EventArgs e)
@@ -121,7 +121,7 @@ namespace AdminSoftNext.Vista
 
                 textBox1.Text = idcal.ToString();
                 textBox2.Text = nombre;
-                textBox3.Text = idnumero.ToString();
+                
                 if(idcal == null || idcal == 0)
                 {
                     MessageBox.Show("No hay Datos en esa fila");
@@ -141,7 +141,7 @@ namespace AdminSoftNext.Vista
             calCont.modificarColono(cal);
             this.textBox1.Text = "";
             this.textBox2.Text = "";
-            this.textBox3.Text = "";
+            
             id = rd.Next(111, 2000);
             textBox1.Text = id.ToString();
             MostrarDatos();
@@ -156,7 +156,7 @@ namespace AdminSoftNext.Vista
             calCont.EliminarCalle(cal);
             this.textBox1.Text = "";
             this.textBox2.Text = "";
-            this.textBox3.Text = "";
+            
             id = rd.Next(111, 2000);
             textBox1.Text = id.ToString();
             MostrarDatos();
@@ -196,6 +196,16 @@ namespace AdminSoftNext.Vista
             {
                 databaseConnection.Close();
             }
+        }
+
+        private void BtnCerrar_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void BtnMinimizar_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
         }
     }
 }

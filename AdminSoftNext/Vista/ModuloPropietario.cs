@@ -28,12 +28,28 @@ namespace AdminSoftNext.Vista
 
         private void button1_Click(object sender, EventArgs e)
         {
-            cargar();
-            proC.registrarPropietario(pro);
-            textBox1.Text = "";
-            textBox2.Text = "";
-            id = rd.Next(10, 9000);
-            MostrarDatos();
+            if(textBox2.Text == "" || textBox4.Text == null)
+            {
+                MessageBox.Show("Llene los campos");
+            }
+            else
+            {
+                id = rd.Next(10, 9000);
+                textBox1.Text = id.ToString();
+                cargar();
+                proC.registrarPropietario(pro);
+                textBox1.Text = "";
+                textBox2.Text = "";
+                textBox3.Text = "";
+                id = rd.Next(10, 9000);
+                MostrarDatos();
+                textBox1.Text = "";
+                textBox2.Text = "";
+                textBox4.Text = "";
+                id = rd.Next(10, 9000);
+            }
+
+            
         }
 
         private void BtnCerrar_Click(object sender, EventArgs e)
@@ -48,13 +64,22 @@ namespace AdminSoftNext.Vista
 
         public void cargar()
         {
-            this.pro.IdPropietario = Convert.ToInt32(textBox1.Text);
-            this.pro.TipoPropiedad = textBox2.Text;
+            try
+            {
+                this.pro.IdPropietario = Convert.ToInt32(textBox1.Text);
+                this.pro.TipoPropiedad = textBox2.Text;
+                this.pro.Costo = Convert.ToDouble(textBox4.Text);
+            }
+            catch
+            {
+
+            }
         }
 
         private void ModuloPropietario_Load(object sender, EventArgs e)
         {
             textBox1.Enabled = false;
+            textBox1.Visible = false;
             id = rd.Next(10, 9000);
             textBox1.Text = id.ToString();
             MostrarDatos();
@@ -95,7 +120,7 @@ namespace AdminSoftNext.Vista
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                //MessageBox.Show(ex.Message);
                 databaseConnection.Close();
             }
             finally

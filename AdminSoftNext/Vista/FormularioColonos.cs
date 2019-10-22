@@ -26,14 +26,15 @@ namespace AdminSoftNext.Vista
         public int idDato = 0;
         //variables a pasar y recibir del modulo Colono
         public int idCol ;
+        int estatus = 0;
         public string nom ;
         public string apepa;
         public string apema;
         public string tel;
-        public string dir;
+        public int dir;
         public int numC ;
         public string email;
-        public string prop;
+        public int prop;
         public int nPro;
 
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
@@ -64,22 +65,7 @@ namespace AdminSoftNext.Vista
         {
             this.Close();
         }
-
-        public void cargar()
-        {
-            this.colbn.Colono.Idcolono = Convert.ToInt32(textBox1.Text);
-            this.colbn.Colono.Nombre = textBox2.Text;
-            this.colbn.Colono.ApPaterno = textBox3.Text;
-            this.colbn.Colono.ApMaterno = textBox4.Text;
-            this.colbn.Colono.Telefono = textBox5.Text;
-            this.colbn.Colono.Direccion = comboBox1.SelectedValue.ToString();
-            this.colbn.Colono.Numero = Convert.ToInt32(textBox6.Text);
-            this.colbn.Colono.Email = textBox7.Text;
-            this.colbn.Colono.Propietario = comboBox2.SelectedValue.ToString();
-            this.colbn.Colono.NumeroPropiedades = Convert.ToInt32(textBox9.Text);
-
-
-        }
+        
 
         public void datosCalles()
         {
@@ -93,7 +79,7 @@ namespace AdminSoftNext.Vista
                 DataTable dt = new DataTable();
                 da1.Fill(dt);
 
-                comboBox1.ValueMember = "nombre";
+                comboBox1.ValueMember = "idcalles";
                 comboBox1.DisplayMember = "nombre";
                 comboBox1.DataSource = dt;
 
@@ -112,7 +98,7 @@ namespace AdminSoftNext.Vista
                 DataTable dt = new DataTable();
                 da1.Fill(dt);
 
-                comboBox2.ValueMember = "tipoPropiedad";
+                comboBox2.ValueMember = "idpropietario";
                 comboBox2.DisplayMember = "tipoPropiedad";
                 comboBox2.DataSource = dt;
 
@@ -121,34 +107,35 @@ namespace AdminSoftNext.Vista
 
         private void FormularioColonos_Load(object sender, EventArgs e)
         {
-            
-            textBox1.Visible = false;
-            datosCalles();
-            datosPropietarios();
-            textBox1.Enabled = false;
-            id = rd.Next(111, 2000);
-            textBox1.Text = id.ToString();
 
-             
-            if(textBox1.Text == "0")
+            try
             {
+                textBox1.Visible = false;
+                datosCalles();
+                datosPropietarios();
+                textBox1.Enabled = false;
                 id = rd.Next(111, 2000);
                 textBox1.Text = id.ToString();
-                idDato = 1;
+
+
+                if (contCol == 2)
+                {
+                    textBox1.Text = idCol.ToString();
+                    textBox2.Text = nom;
+                    textBox3.Text = apepa;
+                    textBox4.Text = apema;
+                    textBox5.Text = tel;
+                    //comboBox1.SelectedValue = dir;
+                    //comboBox2.SelectedValue = prop;
+                    textBox6.Text = numC.ToString();
+                    textBox7.Text = email;
+                    textBox9.Text = nPro.ToString();
+                    idDato = 1;
+
+                }
             }
-            if (contCol == 2)
+            catch
             {
-                textBox1.Text = idCol.ToString();
-                textBox2.Text = nom;
-                textBox3.Text = apepa;
-                textBox4.Text = apema;
-                textBox5.Text = tel;
-                comboBox1.SelectedValue = dir;
-                comboBox2.SelectedValue = prop;
-                textBox6.Text = numC.ToString();
-                textBox7.Text = email;
-                textBox9.Text = nPro.ToString();
-                idDato = 1;
 
             }
 
@@ -159,48 +146,80 @@ namespace AdminSoftNext.Vista
         private void button1_Click(object sender, EventArgs e)
         {
             //cargar();
-            this.colono.Idcolono = Convert.ToInt32(textBox1.Text);
-            this.colono.Nombre = textBox2.Text;
-            this.colono.ApPaterno = textBox3.Text;
-            this.colono.ApMaterno = textBox4.Text;
-            this.colono.Telefono = textBox5.Text;
-            this.colono.Direccion = comboBox1.SelectedValue.ToString();
-            this.colono.Numero = Convert.ToInt32(textBox6.Text);
-            this.colono.Email = textBox7.Text;
-            this.colono.Propietario = comboBox2.SelectedValue.ToString();
-            this.colono.NumeroPropiedades = Convert.ToInt32(textBox9.Text);
-
-            if(contCol == 1)
+            try
             {
-                colc.registrarColono(colono);
-                textBox1.Text = id.ToString();
+
 
                 
-                textBox2.Text = "";
-                textBox3.Text = "";
-                textBox4.Text = "";
-                textBox5.Text = "";
 
-                textBox6.Text = "";
-                textBox7.Text = "";
-                textBox9.Text = "";
-                this.Close();
-                ModuloColonos md = new ModuloColonos();
-                md.refrescar = 1;
-                idDato = 1;
-                md.MostrarDatos();
-                md.Refresh();
+                if (contCol == 1)
+                {
+
+
+                    if(textBox2.Text == "" || textBox3.Text == ""|| textBox4.Text == ""
+                        || textBox5.Text == ""|| textBox6.Text == ""|| textBox7.Text == ""
+                        || textBox9.Text == "")
+                    {
+                        MessageBox.Show("Campos vacios");
+                        textBox1.Text = "";
+                        id = rd.Next(10, 10000);
+                        textBox1.Text = id.ToString();
+                    }
+                    else
+                    {
+                        this.colono.Idcolono = Convert.ToInt32(textBox1.Text);
+                        this.colono.Estatus = estatus;
+                        this.colono.Nombre = textBox2.Text;
+                        this.colono.ApPaterno = textBox3.Text;
+                        this.colono.ApMaterno = textBox4.Text;
+                        this.colono.Telefono = textBox5.Text;
+                        this.colono.Direccion = Convert.ToInt32(comboBox1.SelectedValue);
+                        this.colono.Numero = textBox6.Text;
+                        this.colono.Email = textBox7.Text;
+                        this.colono.Propietario = Convert.ToInt32(comboBox2.SelectedValue);
+                        this.colono.NumeroPropiedades = Convert.ToInt32(textBox9.Text);
+                        colc.registrarColono(colono);
+                       
+
+                        textBox1.Text = "";
+                        textBox2.Text = "";
+                        textBox3.Text = "";
+                        textBox4.Text = "";
+                        textBox5.Text = "";
+
+                        textBox6.Text = "";
+                        textBox7.Text = "";
+                        textBox9.Text = "";
+                        this.Close();
+                    }
+                    
+                   
+                }
+                else if (contCol == 2)
+                {
+                    this.colono.Idcolono = Convert.ToInt32(textBox1.Text);
+                    this.colono.Nombre = textBox2.Text;
+                    this.colono.ApPaterno = textBox3.Text;
+                    this.colono.ApMaterno = textBox4.Text;
+                    this.colono.Telefono = textBox5.Text;
+                    this.colono.Direccion = Convert.ToInt32(comboBox1.SelectedValue.ToString());
+                    this.colono.Numero = textBox6.Text;
+                    this.colono.Email = textBox7.Text;
+                    this.colono.Propietario = Convert.ToInt32(comboBox2.SelectedValue.ToString());
+                    this.colono.NumeroPropiedades = Convert.ToInt32(textBox9.Text);
+                    colc.modificarColono(colono);
+                    this.Close();
+                    ModuloColonos md = new ModuloColonos();
+                    //idDato = 1;
+                    //md.refrescar = 1;
+                    md.MostrarDatos();
+                    md.Refresh();
+
+                }
             }
-            else if (contCol == 2)
+            catch
             {
-                colc.modificarColono(colono);
-                this.Close();
-                ModuloColonos md = new ModuloColonos();
-                idDato = 1;
-                md.refrescar = 1;
-                md.MostrarDatos();
-                md.Refresh();
-                
+
             }
 
            
@@ -219,10 +238,10 @@ namespace AdminSoftNext.Vista
             this.colono.ApPaterno = textBox3.Text;
             this.colono.ApMaterno = textBox4.Text;
             this.colono.Telefono = textBox5.Text;
-            this.colono.Direccion = comboBox1.SelectedValue.ToString();
-            this.colono.Numero = Convert.ToInt32(textBox6.Text);
+            this.colono.Direccion = Convert.ToInt32(comboBox1.SelectedValue.ToString());
+            this.colono.Numero = textBox6.Text;
             this.colono.Email = textBox7.Text;
-            this.colono.Propietario = comboBox2.SelectedValue.ToString();
+            this.colono.Propietario = Convert.ToInt32(comboBox2.SelectedValue.ToString());
             this.colono.NumeroPropiedades = Convert.ToInt32(textBox9.Text);
             colc.modificarColono(colono);
             textBox1.Text = id.ToString();
@@ -263,46 +282,6 @@ namespace AdminSoftNext.Vista
             {
                 e.Handled = true;
             }
-            if (Char.GetNumericValue(e.KeyChar) == 1)
-            {
-                e.Handled = true;
-            }
-            else if (Char.GetNumericValue(e.KeyChar) == 2)
-            {
-                e.Handled = true;
-            }
-            else if (Char.GetNumericValue(e.KeyChar) == 3)
-            {
-                e.Handled = true;
-            }
-            else if (Char.GetNumericValue(e.KeyChar) == 4)
-            {
-                e.Handled = true;
-            }
-
-            else if (Char.GetNumericValue(e.KeyChar) == 6)
-            {
-                e.Handled = true;
-            }
-
-            else if (Char.GetNumericValue(e.KeyChar) == 7)
-            {
-                e.Handled = true;
-            }
-           else if (Char.GetNumericValue(e.KeyChar) == 8)
-            {
-                e.Handled = true;
-            }
-
-            else if (Char.GetNumericValue(e.KeyChar) == 9)
-            {
-                e.Handled = true;
-            }
-
-            if (Char.GetNumericValue(e.KeyChar) >= 10)
-            {
-                e.Handled = true;
-            }
         }
 
         private void button1_Click_1(object sender, EventArgs e)
@@ -317,6 +296,7 @@ namespace AdminSoftNext.Vista
             if (frm2 != null)  //Si encuentra una instancia abierta
             {
                 frm2.Refresh();
+                frm2.MostrarDatos();
             }
         }
     }

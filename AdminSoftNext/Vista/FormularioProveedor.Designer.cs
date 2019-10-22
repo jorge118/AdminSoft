@@ -380,7 +380,9 @@
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormularioProveedor";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormularioProveedor";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FormularioProveedor_FormClosed);
             this.Load += new System.EventHandler(this.FormularioProveedor_Load);
             this.PanelCabecera.ResumeLayout(false);
             this.PanelCabecera.PerformLayout();

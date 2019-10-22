@@ -26,14 +26,15 @@ namespace AdminSoftNext.Vista
         Colono colono = new Colono();
         ColonoController colc = new ColonoController();
         int fila = 0;
-
+        string nombre = "";
+        string direccionC = "";
 
 
         public void MostrarDatos()
         {
             string connectionString = "datasource=127.0.0.1;port=3306;username=root;password=root;database=nextadmindb;";
             // Tu consulta en SQL
-            string query = "select idcolono,direccion,numero,nombre,apPaterno,apMaterno,propietario,email,telefono,numeroPropiedades from colono;";
+            string query = "select idcolono,Direccion,numero,nombre, apPaterno,apMaterno,tipoPropiedad,numeroPropiedades from v_col where estatus = 1;";
 
             // Prepara la conexión
             MySqlConnection databaseConnection = new MySqlConnection(connectionString);
@@ -73,10 +74,10 @@ namespace AdminSoftNext.Vista
             this.colono.ApPaterno = Convert.ToString(dataGridView1.Rows[fila].Cells[4].Value);
             this.colono.ApMaterno = Convert.ToString(dataGridView1.Rows[fila].Cells[5].Value);
             this.colono.Telefono = Convert.ToString(dataGridView1.Rows[fila].Cells[8].Value);
-            this.colono.Direccion = Convert.ToString(dataGridView1.Rows[fila].Cells[1].Value);
-            this.colono.Numero = Convert.ToInt32(dataGridView1.Rows[fila].Cells[2].Value);
+            this.colono.Direccion = Convert.ToInt32(dataGridView1.Rows[fila].Cells[1].Value);
+            this.colono.Numero = Convert.ToString(dataGridView1.Rows[fila].Cells[2].Value);
             this.colono.Email = Convert.ToString(dataGridView1.Rows[fila].Cells[7].Value);
-            this.colono.Propietario = dataGridView1.Rows[fila].Cells[6].Value.ToString();
+            this.colono.Propietario = Convert.ToInt32(dataGridView1.Rows[fila].Cells[6].Value.ToString());
 
         }
 
@@ -100,25 +101,26 @@ namespace AdminSoftNext.Vista
             {
                 databaseConnection.Open();
 
-                string query = "select * from colono where idcolono like('" + textBox1.Text + "%')";
+                string query = "select * from v_col where idcolono like('" + textBox1.Text + "%')";
                 DataTable dt = new DataTable();
                 MySqlCommand cmd = new MySqlCommand(query, databaseConnection);
                 cmd.CommandType = CommandType.Text;
                 if (comboBox1.SelectedItem.ToString() == "Nombre")
                 {
-                    cmd.CommandText = "select idcolono,direccion,numero,nombre,apPaterno,apMaterno,propietario,email,telefono,numeroPropiedades from colono where nombre like('" + textBox1.Text + "%')";
+                    cmd.CommandText = "select idcolono,Direccion,numero,nombre, apPaterno,apMaterno,tipoPropiedad,numeroPropiedades from v_col where nombre like('" + textBox1.Text + "%')";
                 }
                 if (comboBox1.SelectedItem.ToString() == "Apellido Paterno")
                 {
-                    cmd.CommandText = "select idcolono,direccion,numero,nombre,apPaterno,apMaterno,propietario,email,telefono,numeroPropiedades from colono where apPaternolike('" + textBox1.Text + "%')";
+                    cmd.CommandText = "select idcolono,Direccion,numero,nombre, apPaterno,apMaterno,tipoPropiedad,numeroPropiedades from v_col where apPaternolike('" + textBox1.Text + "%')";
                 }
                 if (comboBox1.SelectedItem.ToString() == "Apellido Paterno")
                 {
-                    cmd.CommandText = "select idcolono,direccion,numero,nombre,apPaterno,apMaterno,propietario,email,telefono,numeroPropiedades from colono where apMaterno like('" + textBox1.Text + "%')";
+                    cmd.CommandText = "select idcolono,Direccion,numero,nombre, apPaterno,apMaterno,tipoPropiedad,numeroPropiedades from v_col where apMaterno like('" + textBox1.Text + "%')";
                 }
                 if (comboBox1.SelectedItem.ToString() == "Direccion")
                 {
-                    cmd.CommandText = "select idcolono,direccion,numero,nombre,apPaterno,apMaterno,propietario,email,telefono,numeroPropiedades from colono where direccion like('" + textBox1.Text + "%')";
+                    cmd.CommandText = "select idcolono,Direccion,numero,nombre, apPaterno,apMaterno,tipoPropiedad,numeroPropiedades from v_col where Direccion like('" + textBox1.Text + "%')";
+
                 }
                 //cmd.CommandText = "select * from colono where idcolono like('" + textBox1.Text + "%') or " +
                 //    "nombre like('"+textBox1.Text+"%')" +
@@ -162,5 +164,34 @@ namespace AdminSoftNext.Vista
         {
 
         }
+
+        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            fila = e.RowIndex;
+
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                FormularioPagos fp = new FormularioPagos();
+                nombre = Convert.ToString(dataGridView1.Rows[fila].Cells[3].Value) + " " + Convert.ToString(dataGridView1.Rows[fila].Cells[4].Value) + " " +
+                    Convert.ToString(dataGridView1.Rows[fila].Cells[5].Value);
+                direccionC = Convert.ToString(dataGridView1.Rows[fila].Cells[1].Value) + " " + Convert.ToString(dataGridView1.Rows[fila].Cells[2].Value);
+                fp.idcolono = Convert.ToInt32(dataGridView1.Rows[fila].Cells[0].Value.ToString());
+                fp.nom = nombre;
+                fp.dir = direccionC;
+                fp.ShowDialog();
+
+            }
+            catch
+            {
+
+            }
+        }
+
+       
     }
 }

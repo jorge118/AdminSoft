@@ -17,8 +17,8 @@ namespace AdminSoftNext.Controlador
         public void registrarPropietario(Propietario pro)
         {
             string sentencia;
-            sentencia = "Insert into propietarios(idpropietario,tipoPropiedad) values(" +
-                "'" + pro.IdPropietario + "','" + pro.TipoPropiedad +  "')";
+            sentencia = "Insert into propietarios(idpropietario,tipoPropiedad,costo) values(" +
+                "'" + pro.IdPropietario + "','" + pro.TipoPropiedad + "','" +pro.Costo +"')";
             MySqlCommand commandDatabase = new MySqlCommand(sentencia, databaseConnection);
 
 
@@ -52,8 +52,8 @@ namespace AdminSoftNext.Controlador
         public void modificarPropietario(Propietario pro)
         {
             string sentencia;
-            sentencia = "update propietarios set tipoPropiedad = '" + pro.TipoPropiedad + 
-                "   where idpropietario='" + pro.IdPropietario + "'";
+            sentencia = "update propietarios set tipoPropiedad = '" + pro.TipoPropiedad + "','" +pro.Costo+ 
+                "   where idpropietario='" + pro.IdPropietario +   "'";
             MySqlCommand commandDatabase = new MySqlCommand(sentencia, databaseConnection);
             try
             {

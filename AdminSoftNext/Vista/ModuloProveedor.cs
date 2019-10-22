@@ -1,4 +1,6 @@
-﻿using MySql.Data.MySqlClient;
+﻿using AdminSoftNext.Controlador;
+using AdminSoftNext.Modelo;
+using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -15,6 +17,8 @@ namespace AdminSoftNext.Vista
     {
         DataTable tabla = new DataTable();
         int fila;
+        ProveedorController prC = new ProveedorController();
+        Proveedor pr = new Proveedor();
         public ModuloProveedor()
         {
             InitializeComponent();
@@ -29,7 +33,7 @@ namespace AdminSoftNext.Vista
         {
             string connectionString = "datasource=127.0.0.1;port=3306;username=root;password=root;database=nextadmindb;";
             // Tu consulta en SQL
-            string query = "SELECT * FROM proveedores order by estatus";
+            string query = "SELECT * FROM proveedores order by estatus desc";
 
             // Prepara la conexión
             MySqlConnection databaseConnection = new MySqlConnection(connectionString);
@@ -74,11 +78,16 @@ namespace AdminSoftNext.Vista
 
         private void ModuloProveedor_Load(object sender, EventArgs e)
         {
-            MostrarDatos();
+            
             llenarCombo();
+            btnEliminar.Enabled = false;
+            btnModificar.Enabled = false;
+
             try
             {
+                MostrarDatos();
                 this.dataGridView1.Columns["idProveedor"].Visible = false;
+                
             }
             catch
             {
@@ -90,7 +99,9 @@ namespace AdminSoftNext.Vista
         {
             FormularioProveedor frp = new FormularioProveedor();
             frp.cont = 1;
-            frp.Show();
+            frp.ShowDialog();
+            btnEliminar.Enabled = false;
+            btnModificar.Enabled = false;
         }
 
         private void btnModificar_Click(object sender, EventArgs e)
@@ -109,11 +120,15 @@ namespace AdminSoftNext.Vista
                 prov.email = Convert.ToString(dataGridView1.Rows[fila].Cells[8].Value.ToString());
                 prov.cont = 2;
                 if(prov.idProve == 0 || prov.idProve == null){
-                    MessageBox.Show("Seleccione una fila con datos");
+                    //MessageBox.Show("Seleccione una fila con datos");
+                    btnEliminar.Enabled = false;
+                    btnModificar.Enabled = false;
                 }
                 else
                 {
-                    prov.Show();
+                    prov.ShowDialog();
+                    btnEliminar.Enabled = false;
+                    btnModificar.Enabled = false;
                 }
                 
             }
@@ -125,16 +140,61 @@ namespace AdminSoftNext.Vista
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
+            btnModificar.Enabled = false;
+            btnEliminar.Enabled = false;
+            try
+            {
+                if(fila == null)
+                {
 
+                }
+                else
+                {
+                    DialogResult opcion;
+                    this.pr.IdProveedor = Convert.ToInt32(dataGridView1.Rows[fila].Cells[0].Value.ToString());
+                    opcion = MessageBox.Show(
+                        "Deseas eliminar a este Colono",
+                        "Confirmacion",
+                        MessageBoxButtons.YesNo,
+                        MessageBoxIcon.Question
+                        );
+                    if (opcion == DialogResult.Yes)
+                    {
+                        prC.eliminarProveedor(pr);
+                        MostrarDatos();
+                        btnEliminar.Enabled = false;
+                        btnModificar.Enabled = false;
+
+                    }
+                    else
+                    {
+                        //Close();
+                    }
+                }
+            }
+            catch
+            {
+
+            }
         }
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             fila = e.RowIndex;
-            int idL = Convert.ToInt32(dataGridView1.Rows[fila].Cells[0].Value.ToString());
+            int idL;
             try
             {
-                
+                 idL = Convert.ToInt32(dataGridView1.Rows[fila].Cells[0].Value.ToString());
+                if (idL == null||idL == 0)
+                {
+                    btnEliminar.Enabled = false;
+                    btnModificar.Enabled = false;
+                }
+                else
+                {
+                    btnEliminar.Enabled = true;
+                    btnModificar.Enabled = true;
+                }
             }
             catch
             {
@@ -204,6 +264,12 @@ namespace AdminSoftNext.Vista
             {
                 databaseConnection.Close();
             }
+        }
+
+        private void textBox1_Click(object sender, EventArgs e)
+        {
+            btnEliminar.Enabled = false;
+            btnModificar.Enabled = false;
         }
     }
 }

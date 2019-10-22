@@ -17,8 +17,8 @@ namespace AdminSoftNext.Controlador
         public void registrarColono(Calles cal)
         {
             string sentencia;
-            sentencia = "Insert into calles(idcalles,nombre,idnumero) values(" +
-                "'" + cal.Idcalles + "','" + cal.Nombre + "','" + cal.Idnumero + "')";
+            sentencia = "Insert into calles(idcalles,nombre) values(" +
+                "'" + cal.Idcalles + "','" + cal.Nombre +  "')";
             MySqlCommand commandDatabase = new MySqlCommand(sentencia, databaseConnection);
 
 
@@ -52,8 +52,7 @@ namespace AdminSoftNext.Controlador
         public void modificarColono(Calles cal)
         {
             string sentencia;
-            sentencia = "update calles set nombre = '" + cal.Nombre + "', " +
-                "  idnumero = '" + cal.Idnumero +  "' where idcalles='" + cal.Idcalles + "'";
+            sentencia = "update calles set nombre = '" + cal.Nombre +  "' where idcalles='" + cal.Idcalles + "'";
             MySqlCommand commandDatabase = new MySqlCommand(sentencia, databaseConnection);
             try
             {

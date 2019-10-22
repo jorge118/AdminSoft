@@ -23,6 +23,7 @@ namespace AdminSoftNext
             //FrmLogin frmRegistro = new FrmLogin();
             //frmRegistro.ShowDialog();
             //subPanel.Visible = false;
+            mostrarDashboard();
             subPanel1.Visible = false;
 
         }
@@ -151,15 +152,10 @@ namespace AdminSoftNext
 
         private void btnCalles_Click(object sender, EventArgs e)
         {
-            if (this.PanelContenedor.Controls.Count > 0)
-                this.PanelContenedor.Controls.RemoveAt(0);
+            
             FormularioCalles hijo1 = new FormularioCalles();
-            hijo1.TopLevel = false;
-            hijo1.FormBorderStyle = FormBorderStyle.None;
-            hijo1.Dock = DockStyle.Fill;
-            this.PanelContenedor.Controls.Add(hijo1);
-            this.PanelContenedor.Tag = hijo1;
-            hijo1.Show();
+           
+            hijo1.ShowDialog();
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -203,15 +199,10 @@ namespace AdminSoftNext
 
         private void button3_Click(object sender, EventArgs e)
         {
-            if (this.PanelContenedor.Controls.Count > 0)
-                this.PanelContenedor.Controls.RemoveAt(0);
+            
             CatalogoTiposProveeduria hijo1 = new CatalogoTiposProveeduria();
-            hijo1.TopLevel = false;
-            hijo1.FormBorderStyle = FormBorderStyle.None;
-            hijo1.Dock = DockStyle.Fill;
-            this.PanelContenedor.Controls.Add(hijo1);
-            this.PanelContenedor.Tag = hijo1;
-            hijo1.Show();
+            
+            hijo1.ShowDialog();
         }
 
         private void Btnpagos_Click(object sender, EventArgs e)
@@ -230,6 +221,69 @@ namespace AdminSoftNext
         private void label1_Click(object sender, EventArgs e)
         {
             subPanel1.Visible = false;
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            FormularioTiposPago ftp = new FormularioTiposPago();
+            ftp.ShowDialog();
+        }
+
+        private void BtnLogo_Click(object sender, EventArgs e)
+        {
+            mostrarDashboard();
+        }
+
+
+        public void mostrarDashboard()
+        {
+            if (this.PanelContenedor.Controls.Count > 0)
+                this.PanelContenedor.Controls.RemoveAt(0);
+            Dashboard hijo1 = new Dashboard();
+            hijo1.TopLevel = false;
+            hijo1.FormBorderStyle = FormBorderStyle.None;
+            hijo1.Dock = DockStyle.Fill;
+            this.PanelContenedor.Controls.Add(hijo1);
+            this.PanelContenedor.Tag = hijo1;
+            hijo1.Show();
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            if (this.PanelContenedor.Controls.Count > 0)
+                this.PanelContenedor.Controls.RemoveAt(0);
+            ModuloCuotas hijo1 = new ModuloCuotas();
+            hijo1.TopLevel = false;
+            hijo1.FormBorderStyle = FormBorderStyle.None;
+            hijo1.Dock = DockStyle.Fill;
+            this.PanelContenedor.Controls.Add(hijo1);
+            this.PanelContenedor.Tag = hijo1;
+            hijo1.Show();
+        }
+
+        private void btnSalarios_Click(object sender, EventArgs e)
+        {
+            if (this.PanelContenedor.Controls.Count > 0)
+                this.PanelContenedor.Controls.RemoveAt(0);
+            ModuloSaldos hijo1 = new ModuloSaldos();
+    
+            hijo1.TopLevel = false;
+            hijo1.FormBorderStyle = FormBorderStyle.None;
+            hijo1.Dock = DockStyle.Fill;
+            this.PanelContenedor.Controls.Add(hijo1);
+            this.PanelContenedor.Tag = hijo1;
+            hijo1.Show();
+        }
+
+        private void BtnComvenios_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnTipoCoutas_Click(object sender, EventArgs e)
+        {
+            ModuloTipoCuotas mc = new ModuloTipoCuotas();
+            mc.Show();
         }
     }
 }

@@ -22,7 +22,7 @@ namespace AdminSoftNext.Vista
         DataTable tabla = new DataTable();
         ColonoBeans colbn = new ColonoBeans();
         Colono colono = new Colono();
-        FormularioColonos fr = new FormularioColonos();
+        
         ColonoController colc = new ColonoController();
         int fila = 0;
         public int refrescar;
@@ -36,29 +36,30 @@ namespace AdminSoftNext.Vista
         private void ModuloColonos_Load(object sender, EventArgs e)
         {
             
-            dataGridView1.Refresh();
+            //dataGridView1.Refresh();
             dataGridView1.DataSource = tabla;
             
             button3.Enabled = false;
             button2.Enabled = false;
             llenarCombo();
-            MostrarDatos();
+            
             try
             {
-               // ThreadStart delegado = new ThreadStart(MostrarDatos);
-                if(refrescar == 1)
-                {
-                    MostrarDatos();
-                }
-               
-                idInicial = Convert.ToInt32(dataGridView1.Rows[fila].Cells[0].Value.ToString());
+                MostrarDatos();
+                this.dataGridView1.Columns["idcolono"].Visible = false;
+                
+                
+                // ThreadStart delegado = new ThreadStart(MostrarDatos);
 
-                if(idInicial == null || idInicial == 0)
+
+                //idInicial = Convert.ToInt32(dataGridView1.Rows[fila].Cells[0].Value.ToString());
+
+                if (fila == null)
                 {
                     button3.Enabled = false;
                     button2.Enabled = false;
                 }
-                this.dataGridView1.Columns["idcolono"].Visible = false;
+                
 
                 
             }
@@ -69,16 +70,13 @@ namespace AdminSoftNext.Vista
 
         }
 
-        public void actualizar()
-        {
 
-        }
 
         public void MostrarDatos()
         {
             string connectionString = "datasource=127.0.0.1;port=3306;username=root;password=root;database=nextadmindb;";
             // Tu consulta en SQL
-            string query = "select idcolono,direccion,numero,nombre,apPaterno,apMaterno,propietario,email,telefono,numeroPropiedades from colono;";
+            string query = "select idcolono,Direccion,numero,nombre, apPaterno,apMaterno,tipoPropiedad,email,telefono,numeroPropiedades from vista_colono;";
 
             // Prepara la conexión
             MySqlConnection databaseConnection = new MySqlConnection(connectionString);
@@ -95,7 +93,8 @@ namespace AdminSoftNext.Vista
                 adaptador.Fill(ds);
 
                 dataGridView1.DataSource = ds.Tables[0];
-                dataGridView1.Refresh();
+                //dataGridView1.Refresh();
+                //this.dataGridView1.Columns["idcolono"].Visible = false;
                 databaseConnection.Close();
                     
             }
@@ -113,57 +112,24 @@ namespace AdminSoftNext.Vista
 
         private void button1_Click(object sender, EventArgs e)
         {
-
-            FormularioColonos hijo1 = new FormularioColonos();
-            hijo1.Show();
-            hijo1.contCol = 1;
-         
-        }
-
-        public void modificar()
-        {
-            //cargarDatos();
-            //colc.modificarColono(colono);
-            // FormularioColonos fr = new FormularioColonos();
-
             try
             {
-
-                if (idInicial == null || idInicial == 0)
-                {
-                    button3.Enabled = false;
-                    button2.Enabled = false;
-                }
-                else
-                {
-                    fr.idCol = Convert.ToInt32(dataGridView1.Rows[fila].Cells[0].Value.ToString());
-                    fr.contCol = 2;
-                    fr.nom = Convert.ToString(dataGridView1.Rows[fila].Cells[3].Value);
-                    fr.apepa = Convert.ToString(dataGridView1.Rows[fila].Cells[4].Value);
-                    fr.apema = Convert.ToString(dataGridView1.Rows[fila].Cells[5].Value);
-                    fr.tel = Convert.ToString(dataGridView1.Rows[fila].Cells[8].Value);
-                    fr.dir = Convert.ToString(dataGridView1.Rows[fila].Cells[1].Value);
-
-                    fr.numC = Convert.ToInt32(dataGridView1.Rows[fila].Cells[2].Value.ToString());
-                    fr.email = Convert.ToString(dataGridView1.Rows[fila].Cells[7].Value);
-                    fr.prop = dataGridView1.Rows[fila].Cells[6].Value.ToString();
-                    fr.nPro = Convert.ToInt32(dataGridView1.Rows[fila].Cells[9].Value.ToString());
-                    fr.ShowDialog();
-
-                }
+                FormularioColonos fr = new FormularioColonos();
+                fr.contCol = 1;
+                fr.Show();
             }
             catch
             {
 
             }
-            
-            
+           
             
            
-            this.MostrarDatos();
-            
-            //MessageBox.Show("" + fr.idCol + "," + fr.nom + "," + fr.apepa + "," + fr.apema);
+            button3.Enabled = false;
+            button2.Enabled = false;
         }
+
+
 
         public void cargarDatos()
         {
@@ -173,10 +139,10 @@ namespace AdminSoftNext.Vista
                 this.colono.ApPaterno = Convert.ToString(dataGridView1.Rows[fila].Cells[4].Value);
                 this.colono.ApMaterno = Convert.ToString(dataGridView1.Rows[fila].Cells[5].Value);
                 this.colono.Telefono = Convert.ToString(dataGridView1.Rows[fila].Cells[8].Value);
-                this.colono.Direccion = Convert.ToString(dataGridView1.Rows[fila].Cells[1].Value);
-                this.colono.Numero = Convert.ToInt32(dataGridView1.Rows[fila].Cells[2].Value);
+                this.colono.Direccion = Convert.ToInt32(dataGridView1.Rows[fila].Cells[1].Value);
+                this.colono.Numero = Convert.ToString(dataGridView1.Rows[fila].Cells[2].Value);
                 this.colono.Email = Convert.ToString(dataGridView1.Rows[fila].Cells[7].Value);
-                this.colono.Propietario = dataGridView1.Rows[fila].Cells[6].Value.ToString();
+                this.colono.Propietario = Convert.ToInt32(dataGridView1.Rows[fila].Cells[6].Value.ToString());
             
 
 
@@ -184,19 +150,64 @@ namespace AdminSoftNext.Vista
 
         private void button2_Click(object sender, EventArgs e)
         {
-            modificar();
+
+            try
+            {
+                //cargarDatos();
+                FormularioColonos fr = new FormularioColonos();
+                //FormularioColonos fr1 = new FormularioColonos();
+                fr.idCol = Convert.ToInt32(dataGridView1.Rows[fila].Cells[0].Value.ToString());
+                fr.nom = Convert.ToString(dataGridView1.Rows[fila].Cells[3].Value);
+                fr.apepa = Convert.ToString(dataGridView1.Rows[fila].Cells[4].Value);
+                fr.apema = Convert.ToString(dataGridView1.Rows[fila].Cells[5].Value);
+                fr.tel = Convert.ToString(dataGridView1.Rows[fila].Cells[8].Value);
+                //fr.dir = Convert.ToInt32(dataGridView1.Rows[fila].Cells[1].Value.ToString());
+
+                fr.numC = Convert.ToInt32(dataGridView1.Rows[fila].Cells[2].Value.ToString());
+                fr.email = Convert.ToString(dataGridView1.Rows[fila].Cells[7].Value);
+                //fr.prop = Convert.ToInt32(dataGridView1.Rows[fila].Cells[6].Value.ToString());
+                fr.nPro = Convert.ToInt32(dataGridView1.Rows[fila].Cells[9].Value.ToString());
+                fr.contCol = 2;
+                if (fr.idCol == 0||fr.idCol == null)
+                {
+                    MessageBox.Show("Seleccione una fila con datos");
+                }
+                else
+                {
+                    
+                    fr.ShowDialog();
+
+                }
+
+
+
+
+
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show("Error: "+  ex.StackTrace);
+            }
 
         }
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             fila = e.RowIndex;
+            button1.Enabled = true;
             button3.Enabled = true;
             button2.Enabled = true;
-            if (idInicial == null || idInicial == 0)
+            if (fila == null)
             {
                 button3.Enabled = false;
                 button2.Enabled = false;
+                //button1.Enabled = false;
+            }
+            else
+            {
+                button3.Enabled = true;
+                button2.Enabled = true;
+                
             }
         }
 
@@ -209,29 +220,50 @@ namespace AdminSoftNext.Vista
         }
         private void button3_Click(object sender, EventArgs e)
         {
-            DialogResult opcion;
-            this.colono.Idcolono = Convert.ToInt32(dataGridView1.Rows[fila].Cells[0].Value.ToString());
-            opcion = MessageBox.Show(
-                "Deseas eliminar a este Colono",
-                "Confirmacion" ,
-                MessageBoxButtons.YesNo,
-                MessageBoxIcon.Question
-                );
-            if(opcion == DialogResult.Yes)
+            try
             {
-                colc.Eliminar(colono);
-                MostrarDatos();
+                if (fila == null)
+                {
+                    button3.Enabled = false;
+                    button2.Enabled = false;
+                    
+                   
+                }
+                else
+                {
+                    DialogResult opcion;
+                    this.colono.Idcolono = Convert.ToInt32(dataGridView1.Rows[fila].Cells[0].Value.ToString());
+                    opcion = MessageBox.Show(
+                        "Deseas eliminar a este Colono",
+                        "Confirmacion",
+                        MessageBoxButtons.YesNo,
+                        MessageBoxIcon.Question
+                        );
+                    if (opcion == DialogResult.Yes)
+                    {
+                        colc.Eliminar(colono);
+                        MostrarDatos();
+                        button3.Enabled = false;
+                        button2.Enabled = false;
+
+                    }
+                    else
+                    {
+                        //Close();
+                    }
+                }
                 
             }
-            else
+            catch
             {
-                //Close();
+
             }
             
         }
 
         private void textBox1_KeyUp(object sender, KeyEventArgs e)
         {
+            
             string connectionString = "datasource=127.0.0.1;port=3306;username=root;password=root;database=nextadmindb;";
             // Tu consulta en SQL
            
@@ -286,17 +318,7 @@ namespace AdminSoftNext.Vista
             }
         }
 
-        private void button4_Click(object sender, EventArgs e)
-        {
-            FormularioCalles hijo1 = new FormularioCalles();
-            hijo1.Show();
-        }
-
-        private void button5_Click(object sender, EventArgs e)
-        {
-            ModuloPropietario md = new ModuloPropietario();
-            md.Show();
-        }
+       
 
         private void ModuloColonos_SizeChanged(object sender, EventArgs e)
         {
@@ -306,6 +328,22 @@ namespace AdminSoftNext.Vista
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void textBox1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void textBox1_Click(object sender, EventArgs e)
+        {
+            button3.Enabled = false;
+            button2.Enabled = false;
         }
     }
 }

@@ -29,9 +29,13 @@ namespace AdminSoftNext.Vista
         {
             MostrarDatos();
             llenarCombo();
+            btnBorrar.Enabled = false;
+            btnModificar.Enabled = false;
+
             try
             {
                 this.dataGridView1.Columns["idTag"].Visible = false;
+
             }
             catch
             {
@@ -80,32 +84,75 @@ namespace AdminSoftNext.Vista
         {
             fTags = new FormularioTags();
             fTags.cont = 1;
-            fTags.Show();
+            fTags.ShowDialog();
         }
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             fila = e.RowIndex;
+            if(fila == null)
+            {
+                btnBorrar.Enabled = false;
+                btnModificar.Enabled = false;
+            }
+            else
+            {
+                btnAgregar.Enabled = true;
+                btnModificar.Enabled = true;
+                btnBorrar.Enabled = true;
+            }
 
         }
 
         private void btnModificar_Click(object sender, EventArgs e)
         {
-            fTags = new FormularioTags();
-            fTags.idTags = Convert.ToInt32(dataGridView1.Rows[fila].Cells[0].Value.ToString());
-            fTags.numTag = Convert.ToInt32(dataGridView1.Rows[fila].Cells[1].Value.ToString());
-            fTags.numSitio2 = Convert.ToInt32(dataGridView1.Rows[fila].Cells[2].Value.ToString());
-            fTags.tipVehiculo = dataGridView1.Rows[fila].Cells[3].Value.ToString();
-            fTags.placas = dataGridView1.Rows[fila].Cells[4].Value.ToString();
-            fTags.color = dataGridView1.Rows[fila].Cells[5].Value.ToString();
-            fTags.cont = 2;
-            fTags.Show();
+            try
+            {
+                fTags = new FormularioTags();
+                if (fTags.idTags == null || fila == null)
+                {
+                    MessageBox.Show("Fila sin datos");
+                    btnAgregar.Enabled = false;
+                    btnModificar.Enabled = false;
+                }
+                else
+                {
+                    fTags.idTags = Convert.ToInt32(dataGridView1.Rows[fila].Cells[0].Value.ToString());
+                    fTags.numTag = Convert.ToInt32(dataGridView1.Rows[fila].Cells[1].Value.ToString());
+                    fTags.numSitio2 = Convert.ToInt32(dataGridView1.Rows[fila].Cells[2].Value.ToString());
+                    fTags.tipVehiculo = dataGridView1.Rows[fila].Cells[3].Value.ToString();
+                    fTags.placas = dataGridView1.Rows[fila].Cells[4].Value.ToString();
+                    fTags.color = dataGridView1.Rows[fila].Cells[5].Value.ToString();
+                    fTags.obser = dataGridView1.Rows[fila].Cells[7].Value.ToString();
+                    fTags.cont = 2;
+                    fTags.ShowDialog();
+                }
+            }
+            catch
+            {
+
+            }
+           
         }
 
         private void btnBorrar_Click(object sender, EventArgs e)
         {
-            this.tgs.IdTag = Convert.ToInt32(dataGridView1.Rows[fila].Cells[0].Value.ToString());
-            tgC.eliminarTag(tgs);
+            try
+            {
+                if(fila == null)
+                {
+
+                }
+                else
+                {
+                    this.tgs.IdTag = Convert.ToInt32(dataGridView1.Rows[fila].Cells[0].Value.ToString());
+                    tgC.eliminarTag(tgs);
+                }
+            }
+            catch
+            {
+
+            }
         }
 
         public void llenarCombo()
@@ -118,6 +165,8 @@ namespace AdminSoftNext.Vista
 
         private void textBox1_KeyUp(object sender, KeyEventArgs e)
         {
+            btnAgregar.Enabled = false;
+            btnModificar.Enabled = false;
             string connectionString = "datasource=127.0.0.1;port=3306;username=root;password=root;database=nextadmindb;";
             // Tu consulta en SQL
 
@@ -170,6 +219,13 @@ namespace AdminSoftNext.Vista
             {
                 databaseConnection.Close();
             }
+        }
+
+        private void textBox1_Click(object sender, EventArgs e)
+        {
+            //btnAgregar.Enabled = false;
+            btnModificar.Enabled = false;
+            btnBorrar.Enabled = false;
         }
     }
 }

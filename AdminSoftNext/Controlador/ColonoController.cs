@@ -18,10 +18,10 @@ namespace AdminSoftNext.Controlador
         {
             string sentencia;
             sentencia = "Insert into colono(idcolono,nombre,apPaterno,apMaterno," +
-                "telefono,direccion,numero,email,propietario,numeroPropiedades) values(" +
+                "telefono,direccion,numero,email,propietario,numeroPropiedades,estatus) values(" +
                 "'" + col.Idcolono + "','" + col.Nombre + "','" + col.ApPaterno + "','" + col.ApMaterno + "'," +
                 "'" + col.Telefono + "','" + col.Direccion + "','" + col.Numero + "','" + col.Email + "','" + col.Propietario + "'," +
-                "'" + col.NumeroPropiedades + "')";
+                "'" + col.NumeroPropiedades + "','"+col.Estatus+"')";
             MySqlCommand commandDatabase = new MySqlCommand(sentencia, databaseConnection);
 
 

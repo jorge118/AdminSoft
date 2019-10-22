@@ -41,6 +41,9 @@ namespace AdminSoftNext.Vista
 
         [DllImport("user32.DLL", EntryPoint = "SendMessage")]
         private extern static void SendMessage(System.IntPtr hwnd, int wmsg, int wparam, int lparam);
+
+
+
         private void FormularioProveedor_Load(object sender, EventArgs e)
         {
             datosTipo();
@@ -86,33 +89,59 @@ namespace AdminSoftNext.Vista
 
         private void btnAceptar_Click(object sender, EventArgs e)
         {
-
-            this.pro.IdProveedor = Convert.ToInt32(idTxt.Text);
-            this.pro.NombreProveedor = textBox1.Text;
-            this.pro.RazonSocial = rzTxt.Text;
-            this.pro.Rfc = rfcTxt.Text;
-            this.pro.TipodeProveeduria = comboBox1.SelectedValue.ToString();
-            this.pro.Direccion = dirTxt.Text;
-            this.pro.TelefonoFijo = telfijoTxt.Text;
-            this.pro.Celular = celTxt.Text;
-            this.pro.Email = emailTxt.Text;
-            this.pro.Estatus = est; 
+            if (rzTxt.Text =="" ||rfcTxt.Text==""||emailTxt.Text == ""|| celTxt.Text ==""
+                || telfijoTxt.Text == "" ||textBox1.Text =="")
+            {
+                //MessageBox.Show("Llena todos los campos");
+            }
+            else
+            {
+                this.pro.IdProveedor = Convert.ToInt32(idTxt.Text);
+                this.pro.NombreProveedor = textBox1.Text;
+                this.pro.RazonSocial = rzTxt.Text;
+                this.pro.Rfc = rfcTxt.Text;
+                this.pro.TipodeProveeduria = comboBox1.SelectedValue.ToString();
+                this.pro.Direccion = dirTxt.Text;
+                this.pro.TelefonoFijo = telfijoTxt.Text;
+                this.pro.Celular = celTxt.Text;
+                this.pro.Email = emailTxt.Text;
+                this.pro.Estatus = est;
+            }
+            
             if(cont == 1)
             {
-                //id = rd.Next(101, 99991);
-                //idTxt.Text = id.ToString();
-                proC.altaProveedor(pro);
-                idTxt.Text = "";
-                textBox1.Text = "";
-                rzTxt.Text = "";
-                rfcTxt.Text = "";
-                dirTxt.Text = "";
-                telfijoTxt.Text = "";
-                celTxt.Text = "";
-                id = rd.Next(101, 99991);
-                idTxt.Text = id.ToString();
-                this.Close();
-            }else if (cont == 2)
+                if (rzTxt.Text == "" || rfcTxt.Text == "" || emailTxt.Text == "" || celTxt.Text == ""
+               || telfijoTxt.Text == "" || textBox1.Text == "")
+                {
+                    MessageBox.Show("Llena todos los campos");
+                }
+                else
+                {
+                    id = rd.Next(1001, 99991);
+                    idTxt.Text = id.ToString();
+                    proC.altaProveedor(pro);
+                    idTxt.Text = "";
+                    textBox1.Text = "";
+                    rzTxt.Text = "";
+                    rfcTxt.Text = "";
+                    dirTxt.Text = "";
+                    telfijoTxt.Text = "";
+                    celTxt.Text = "";
+                    id = rd.Next(101, 99991);
+                    idTxt.Text = id.ToString();
+                    Close();
+                    ModuloProveedor frm8 = Application.OpenForms.OfType<ModuloProveedor>().FirstOrDefault();
+
+                    if (frm8 != null)  //Si encuentra una instancia abierta
+                    {
+                        frm8.Refresh();
+                        frm8.MostrarDatos();
+                    }
+                }
+ 
+                
+            }
+            else if (cont == 2)
             {
 
 
@@ -126,7 +155,14 @@ namespace AdminSoftNext.Vista
                 celTxt.Text = "";
                 id = rd.Next(101, 99991);
                 idTxt.Text = id.ToString();
-                this.Close();
+                Close();
+                ModuloProveedor frm8 = Application.OpenForms.OfType<ModuloProveedor>().FirstOrDefault();
+
+                if (frm8 != null)  //Si encuentra una instancia abierta
+                {
+                    frm8.Refresh();
+                    frm8.MostrarDatos();
+                }
             }
 
         }
@@ -180,6 +216,17 @@ namespace AdminSoftNext.Vista
             BtnMaximizar.Visible = false;
             BtnRestaurar.Visible = true;
             this.WindowState = FormWindowState.Maximized;
+        }
+
+        private void FormularioProveedor_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            ModuloProveedor frm8 = Application.OpenForms.OfType<ModuloProveedor>().FirstOrDefault();
+
+            if (frm8 != null)  //Si encuentra una instancia abierta
+            {
+                frm8.Refresh();
+                frm8.MostrarDatos();
+            }
         }
     }
 }

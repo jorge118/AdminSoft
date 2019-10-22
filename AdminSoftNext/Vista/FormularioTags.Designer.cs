@@ -36,6 +36,8 @@
             this.BtnCerrar = new System.Windows.Forms.Button();
             this.idText = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label9 = new System.Windows.Forms.Label();
+            this.textObser = new System.Windows.Forms.TextBox();
             this.txtReactivo = new System.Windows.Forms.TextBox();
             this.txtNum = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
@@ -71,7 +73,7 @@
             this.PanelCabecera.Location = new System.Drawing.Point(0, 0);
             this.PanelCabecera.Margin = new System.Windows.Forms.Padding(2);
             this.PanelCabecera.Name = "PanelCabecera";
-            this.PanelCabecera.Size = new System.Drawing.Size(627, 26);
+            this.PanelCabecera.Size = new System.Drawing.Size(653, 26);
             this.PanelCabecera.TabIndex = 2;
             // 
             // BtnRestaurar
@@ -83,7 +85,7 @@
             this.BtnRestaurar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Orange;
             this.BtnRestaurar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnRestaurar.Image = ((System.Drawing.Image)(resources.GetObject("BtnRestaurar.Image")));
-            this.BtnRestaurar.Location = new System.Drawing.Point(573, -2);
+            this.BtnRestaurar.Location = new System.Drawing.Point(599, -2);
             this.BtnRestaurar.Margin = new System.Windows.Forms.Padding(2);
             this.BtnRestaurar.Name = "BtnRestaurar";
             this.BtnRestaurar.Size = new System.Drawing.Size(25, 26);
@@ -101,7 +103,7 @@
             this.BtnMinimizar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Orange;
             this.BtnMinimizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnMinimizar.Image = ((System.Drawing.Image)(resources.GetObject("BtnMinimizar.Image")));
-            this.BtnMinimizar.Location = new System.Drawing.Point(545, 2);
+            this.BtnMinimizar.Location = new System.Drawing.Point(571, 2);
             this.BtnMinimizar.Margin = new System.Windows.Forms.Padding(2);
             this.BtnMinimizar.Name = "BtnMinimizar";
             this.BtnMinimizar.Size = new System.Drawing.Size(25, 26);
@@ -118,7 +120,7 @@
             this.BtnMaximizar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Orange;
             this.BtnMaximizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnMaximizar.Image = ((System.Drawing.Image)(resources.GetObject("BtnMaximizar.Image")));
-            this.BtnMaximizar.Location = new System.Drawing.Point(573, 2);
+            this.BtnMaximizar.Location = new System.Drawing.Point(599, 2);
             this.BtnMaximizar.Margin = new System.Windows.Forms.Padding(2);
             this.BtnMaximizar.Name = "BtnMaximizar";
             this.BtnMaximizar.Size = new System.Drawing.Size(25, 26);
@@ -135,7 +137,7 @@
             this.BtnCerrar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Orange;
             this.BtnCerrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnCerrar.Image = ((System.Drawing.Image)(resources.GetObject("BtnCerrar.Image")));
-            this.BtnCerrar.Location = new System.Drawing.Point(601, 0);
+            this.BtnCerrar.Location = new System.Drawing.Point(627, 0);
             this.BtnCerrar.Margin = new System.Windows.Forms.Padding(2);
             this.BtnCerrar.Name = "BtnCerrar";
             this.BtnCerrar.Size = new System.Drawing.Size(25, 26);
@@ -152,6 +154,8 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.label9);
+            this.panel1.Controls.Add(this.textObser);
             this.panel1.Controls.Add(this.txtReactivo);
             this.panel1.Controls.Add(this.txtNum);
             this.panel1.Controls.Add(this.label8);
@@ -172,8 +176,24 @@
             this.panel1.Controls.Add(this.label1);
             this.panel1.Location = new System.Drawing.Point(13, 59);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(590, 229);
+            this.panel1.Size = new System.Drawing.Size(590, 271);
             this.panel1.TabIndex = 4;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(32, 217);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(78, 13);
+            this.label9.TabIndex = 19;
+            this.label9.Text = "Observaciones";
+            // 
+            // textObser
+            // 
+            this.textObser.Location = new System.Drawing.Point(119, 210);
+            this.textObser.Name = "textObser";
+            this.textObser.Size = new System.Drawing.Size(400, 20);
+            this.textObser.TabIndex = 18;
             // 
             // txtReactivo
             // 
@@ -239,7 +259,7 @@
             // 
             // colorTxt
             // 
-            this.colorTxt.Location = new System.Drawing.Point(111, 158);
+            this.colorTxt.Location = new System.Drawing.Point(119, 158);
             this.colorTxt.Name = "colorTxt";
             this.colorTxt.Size = new System.Drawing.Size(117, 20);
             this.colorTxt.TabIndex = 10;
@@ -253,7 +273,7 @@
             // 
             // vehiTxt
             // 
-            this.vehiTxt.Location = new System.Drawing.Point(111, 119);
+            this.vehiTxt.Location = new System.Drawing.Point(119, 119);
             this.vehiTxt.Name = "vehiTxt";
             this.vehiTxt.Size = new System.Drawing.Size(117, 20);
             this.vehiTxt.TabIndex = 8;
@@ -268,7 +288,7 @@
             // 
             // tagTxt
             // 
-            this.tagTxt.Location = new System.Drawing.Point(111, 72);
+            this.tagTxt.Location = new System.Drawing.Point(119, 72);
             this.tagTxt.Name = "tagTxt";
             this.tagTxt.Size = new System.Drawing.Size(117, 20);
             this.tagTxt.TabIndex = 6;
@@ -329,7 +349,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(448, 294);
+            this.button1.Location = new System.Drawing.Point(435, 336);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 5;
@@ -339,7 +359,7 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(542, 294);
+            this.button2.Location = new System.Drawing.Point(529, 336);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(75, 23);
             this.button2.TabIndex = 6;
@@ -351,7 +371,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(627, 338);
+            this.ClientSize = new System.Drawing.Size(653, 371);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.panel1);
@@ -359,7 +379,9 @@
             this.Controls.Add(this.PanelCabecera);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormularioTags";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormularioTags";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FormularioTags_FormClosed);
             this.Load += new System.EventHandler(this.FormularioTags_Load);
             this.PanelCabecera.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
@@ -398,5 +420,7 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.CheckBox checkBox1;
         private System.Windows.Forms.CheckBox checkBoxTag;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.TextBox textObser;
     }
 }
