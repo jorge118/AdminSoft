@@ -77,7 +77,6 @@ C:\Users\Jorge\Documents\GitHub\AdminSoft\AdminSoftNext\bin\Debug\AdminSoftNext.
 C:\Users\Jorge\Documents\GitHub\AdminSoft\AdminSoftNext\bin\Debug\MaterialDesignColors.dll
 C:\Users\Jorge\Documents\GitHub\AdminSoft\AdminSoftNext\bin\Debug\MaterialDesignThemes.Wpf.dll
 C:\Users\Jorge\Documents\GitHub\AdminSoft\AdminSoftNext\bin\Debug\MaterialSkin.dll
-C:\Users\Jorge\Documents\GitHub\AdminSoft\AdminSoftNext\bin\Debug\MySql.Data.dll
 C:\Users\Jorge\Documents\GitHub\AdminSoft\AdminSoftNext\bin\Debug\Google.Protobuf.dll
 C:\Users\Jorge\Documents\GitHub\AdminSoft\AdminSoftNext\bin\Debug\BouncyCastle.Crypto.dll
 C:\Users\Jorge\Documents\GitHub\AdminSoft\AdminSoftNext\bin\Debug\MaterialDesignColors.pdb
@@ -85,9 +84,7 @@ C:\Users\Jorge\Documents\GitHub\AdminSoft\AdminSoftNext\bin\Debug\MaterialDesign
 C:\Users\Jorge\Documents\GitHub\AdminSoft\AdminSoftNext\bin\Debug\MaterialDesignThemes.Wpf.xml
 C:\Users\Jorge\Documents\GitHub\AdminSoft\AdminSoftNext\bin\Debug\Microsoft.VisualBasic.PowerPacks.xml
 C:\Users\Jorge\Documents\GitHub\AdminSoft\AdminSoftNext\bin\Debug\MySql.Data.xml
-C:\Users\Jorge\Documents\GitHub\AdminSoft\AdminSoftNext\bin\Debug\MySql.Web.xml
 C:\Users\Jorge\Documents\GitHub\AdminSoft\AdminSoftNext\obj\Debug\AdminSoftNext.csprojAssemblyReference.cache
-C:\Users\Jorge\Documents\GitHub\AdminSoft\AdminSoftNext\obj\Debug\AdminSoftNext.exe.config
 C:\Users\Jorge\Documents\GitHub\AdminSoft\AdminSoftNext\obj\Debug\AdminSoftNext.csproj.ResolveComReference.cache
 C:\Users\Jorge\Documents\GitHub\AdminSoft\AdminSoftNext\obj\Debug\AdminSoftNext.DbConfiguracion.resources
 C:\Users\Jorge\Documents\GitHub\AdminSoft\AdminSoftNext\obj\Debug\AdminSoftNext.FrmPrincipal.resources
@@ -127,3 +124,4 @@ C:\Users\Jorge\Documents\GitHub\AdminSoft\AdminSoftNext\obj\Debug\AdminSoftNext.
 C:\Users\Jorge\Documents\GitHub\AdminSoft\AdminSoftNext\obj\Debug\AdminSoftNext.Vista.FormularioSaldos.resources
 C:\Users\Jorge\Documents\GitHub\AdminSoft\AdminSoftNext\obj\Debug\AdminSoftNext.Vista.ModuloSaldos.resources
 C:\Users\Jorge\Documents\GitHub\AdminSoft\AdminSoftNext\obj\Debug\AdminSoftNext.Vista.ModuloTipoCuotas.resources
+C:\Users\Jorge\Documents\GitHub\AdminSoft\AdminSoftNext\bin\Debug\MySql.Data.dll

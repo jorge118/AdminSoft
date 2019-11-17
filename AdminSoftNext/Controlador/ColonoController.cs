@@ -13,7 +13,8 @@ namespace AdminSoftNext.Controlador
     class ColonoController:modelo
     {
         MySqlCommand cmd = new MySqlCommand();
-        MySqlConnection databaseConnection = new MySqlConnection("server=127.0.0.1;database=nextadmindb;Uid=root;pwd=root");
+        MySqlConnection databaseConnection =
+            new MySqlConnection("server=127.0.0.1;port=3306;database=nextadmindb;Uid=root;pwd=root");
         public void registrarColono(Colono col)
         {
             string sentencia;

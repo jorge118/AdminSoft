@@ -44,7 +44,7 @@
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(73, 37);
+            this.textBox1.Location = new System.Drawing.Point(53, 36);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(100, 20);
             this.textBox1.TabIndex = 2;
@@ -66,7 +66,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(24, 40);
+            this.label2.Location = new System.Drawing.Point(4, 39);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(43, 13);
             this.label2.TabIndex = 12;
@@ -85,7 +85,7 @@
             // comboBox1
             // 
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(191, 37);
+            this.comboBox1.Location = new System.Drawing.Point(171, 36);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(155, 21);
             this.comboBox1.TabIndex = 7;
@@ -94,7 +94,7 @@
             // 
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(27, 64);
+            this.dataGridView1.Location = new System.Drawing.Point(4, 64);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(940, 347);
             this.dataGridView1.TabIndex = 3;
@@ -104,7 +104,7 @@
             // 
             this.btnBorrar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnBorrar.BackgroundImage")));
             this.btnBorrar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnBorrar.Location = new System.Drawing.Point(78, 429);
+            this.btnBorrar.Location = new System.Drawing.Point(58, 429);
             this.btnBorrar.Name = "btnBorrar";
             this.btnBorrar.Size = new System.Drawing.Size(37, 33);
             this.btnBorrar.TabIndex = 10;
@@ -115,7 +115,7 @@
             // 
             this.btnModificar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnModificar.BackgroundImage")));
             this.btnModificar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnModificar.Location = new System.Drawing.Point(118, 429);
+            this.btnModificar.Location = new System.Drawing.Point(98, 429);
             this.btnModificar.Name = "btnModificar";
             this.btnModificar.Size = new System.Drawing.Size(35, 34);
             this.btnModificar.TabIndex = 9;
@@ -127,7 +127,7 @@
             this.btnAgregar.AutoSize = true;
             this.btnAgregar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnAgregar.BackgroundImage")));
             this.btnAgregar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnAgregar.Location = new System.Drawing.Point(35, 429);
+            this.btnAgregar.Location = new System.Drawing.Point(15, 429);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(37, 33);
             this.btnAgregar.TabIndex = 8;

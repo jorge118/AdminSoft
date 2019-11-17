@@ -120,5 +120,10 @@ namespace AdminSoftNext.Vista
             lblHora.Text = DateTime.Now.ToString("hh:mm:ss");
             lblDia.Text = DateTime.Now.ToLongDateString();
         }
+
+        private void chart1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

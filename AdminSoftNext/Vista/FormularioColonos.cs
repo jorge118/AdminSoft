@@ -291,12 +291,12 @@ namespace AdminSoftNext.Vista
 
         private void FormularioColonos_FormClosed(object sender, FormClosedEventArgs e)
         {
-            ModuloColonos frm2 = Application.OpenForms.OfType<ModuloColonos>().FirstOrDefault();
+            ModuloColonos frm22 = Application.OpenForms.OfType<ModuloColonos>().FirstOrDefault();
 
-            if (frm2 != null)  //Si encuentra una instancia abierta
+            if (frm22 != null)  //Si encuentra una instancia abierta
             {
-                frm2.Refresh();
-                frm2.MostrarDatos();
+                frm22.Refresh();
+                frm22.MostrarDatos();
             }
         }
     }

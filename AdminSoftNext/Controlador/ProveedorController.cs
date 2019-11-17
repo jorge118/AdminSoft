@@ -15,7 +15,7 @@ namespace AdminSoftNext.Controlador
         Proveeduria proveeduria = new Proveeduria();
         MySqlCommand cmd = new MySqlCommand();
         MySqlConnection databaseConnection =
-            new MySqlConnection("server=127.0.0.1;database=nextadmindb;Uid=root;pwd=root");
+            new MySqlConnection("server=127.0.0.1;port=3306;Uid=root;pwd=root;database=nextadmindb");
         public void altaProveedor(Proveedor pro)
         {
             string query;

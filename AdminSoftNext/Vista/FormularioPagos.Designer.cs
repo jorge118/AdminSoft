@@ -34,6 +34,11 @@
             this.lbNombre = new System.Windows.Forms.Label();
             this.lbDireccion = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dtCantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dtDescripcion = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.dtMes = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.dtCostoU = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dtCostoT = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnNuevoPago = new System.Windows.Forms.Button();
             this.btnQuitar = new System.Windows.Forms.Button();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
@@ -44,11 +49,6 @@
             this.label5 = new System.Windows.Forms.Label();
             this.lbSubTotal = new System.Windows.Forms.Label();
             this.lbTotal = new System.Windows.Forms.Label();
-            this.dtCantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dtDescripcion = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.dtMes = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.dtCostoU = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dtCostoT = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -111,6 +111,36 @@
             this.dataGridView1.EditingControlShowing += new System.Windows.Forms.DataGridViewEditingControlShowingEventHandler(this.dataGridView1_EditingControlShowing);
             this.dataGridView1.RowsAdded += new System.Windows.Forms.DataGridViewRowsAddedEventHandler(this.dataGridView1_RowsAdded);
             // 
+            // dtCantidad
+            // 
+            this.dtCantidad.HeaderText = "Cantidad";
+            this.dtCantidad.Name = "dtCantidad";
+            this.dtCantidad.ReadOnly = true;
+            // 
+            // dtDescripcion
+            // 
+            this.dtDescripcion.HeaderText = "Descripcion";
+            this.dtDescripcion.Name = "dtDescripcion";
+            this.dtDescripcion.Width = 170;
+            // 
+            // dtMes
+            // 
+            this.dtMes.HeaderText = "Mes";
+            this.dtMes.Name = "dtMes";
+            this.dtMes.Width = 110;
+            // 
+            // dtCostoU
+            // 
+            this.dtCostoU.HeaderText = "CostoUnitario";
+            this.dtCostoU.Name = "dtCostoU";
+            this.dtCostoU.ReadOnly = true;
+            // 
+            // dtCostoT
+            // 
+            this.dtCostoT.HeaderText = "Costo Total";
+            this.dtCostoT.Name = "dtCostoT";
+            this.dtCostoT.ReadOnly = true;
+            // 
             // btnNuevoPago
             // 
             this.btnNuevoPago.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnNuevoPago.BackgroundImage")));
@@ -120,6 +150,7 @@
             this.btnNuevoPago.Size = new System.Drawing.Size(36, 33);
             this.btnNuevoPago.TabIndex = 5;
             this.btnNuevoPago.UseVisualStyleBackColor = true;
+            this.btnNuevoPago.Click += new System.EventHandler(this.btnNuevoPago_Click);
             // 
             // btnQuitar
             // 
@@ -130,6 +161,7 @@
             this.btnQuitar.Size = new System.Drawing.Size(38, 33);
             this.btnQuitar.TabIndex = 6;
             this.btnQuitar.UseVisualStyleBackColor = true;
+            this.btnQuitar.Click += new System.EventHandler(this.btnQuitar_Click);
             // 
             // comboBox1
             // 
@@ -207,36 +239,6 @@
             this.lbTotal.Size = new System.Drawing.Size(27, 15);
             this.lbTotal.TabIndex = 14;
             this.lbTotal.Text = "0.0";
-            // 
-            // dtCantidad
-            // 
-            this.dtCantidad.HeaderText = "Cantidad";
-            this.dtCantidad.Name = "dtCantidad";
-            this.dtCantidad.ReadOnly = true;
-            // 
-            // dtDescripcion
-            // 
-            this.dtDescripcion.HeaderText = "Descripcion";
-            this.dtDescripcion.Name = "dtDescripcion";
-            this.dtDescripcion.Width = 170;
-            // 
-            // dtMes
-            // 
-            this.dtMes.HeaderText = "Mes";
-            this.dtMes.Name = "dtMes";
-            this.dtMes.Width = 110;
-            // 
-            // dtCostoU
-            // 
-            this.dtCostoU.HeaderText = "CostoUnitario";
-            this.dtCostoU.Name = "dtCostoU";
-            this.dtCostoU.ReadOnly = true;
-            // 
-            // dtCostoT
-            // 
-            this.dtCostoT.HeaderText = "Costo Total";
-            this.dtCostoT.Name = "dtCostoT";
-            this.dtCostoT.ReadOnly = true;
             // 
             // FormularioPagos
             // 
